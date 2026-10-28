@@ -1,0 +1,23 @@
+# Chen–Dalang moments and growth indices: Lean formalization
+
+This is the substantive formalization of selected results from Chen–Dalang
+(Ann. Probab. 2015, doi:10.1214/14-AOP954), source-based and not a novelty claim.
+Read README.md, docs/what-is-proved.md and docs/PAPER_SOURCE.md for the exact scope.
+
+The selected Comparator configuration is comparator/config-chen-dalang-2015.json.
+It names Challenge and Solution and exactly 16 theorems. There are 216 declarations
+in claims.yaml: 16 reusable entry claims and 200 supporting internal claims, all
+included in the native environment audit. A supporting designation is not proof
+removal and does not claim individual statement comparison.
+
+Read the committed .lean-receipts for exact source binding, axioms and independent
+kernel results. The generated docs/verification.md and docs/coverage.md summarize
+those records; docs/reproduce.md explains local checking. Standard allowed axioms
+are propext, Classical.choice and Quot.sound. Intentional Challenge placeholders
+are not permitted in Solution proofs.
+
+The scope includes nonnegative-data full p = 2 existence, actual-integral L2
+continuity, pointwise a.s. uniqueness, proved moments, selected growth indices
+and all-real-p lower conclusions. Signed data, higher-p upper bounds, two-point
+stochastic formulas, sample-path continuity and full-paper verification are not
+claimed. No Palomar registration is claimed without its immutable entry.
