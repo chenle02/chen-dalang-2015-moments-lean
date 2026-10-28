@@ -1,0 +1,42 @@
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 9031 file(s)
+lean-path-shadow: none (13 entries, roots Challenge,ChenDalang15,Solution)
+== lake comparator (toolchain) comparator/config-chen-dalang-2015.json
+Resolving dependencies
+Building Challenge
+⚠ [9047/9048] Replayed Challenge
+warning: Challenge.lean:251:8: declaration uses `sorry`
+warning: Challenge.lean:262:8: declaration uses `sorry`
+warning: Challenge.lean:271:8: declaration uses `sorry`
+warning: Challenge.lean:280:8: declaration uses `sorry`
+warning: Challenge.lean:286:8: declaration uses `sorry`
+warning: Challenge.lean:294:8: declaration uses `sorry`
+warning: Challenge.lean:300:8: declaration uses `sorry`
+warning: Challenge.lean:309:8: declaration uses `sorry`
+warning: Challenge.lean:323:8: declaration uses `sorry`
+warning: Challenge.lean:337:8: declaration uses `sorry`
+warning: Challenge.lean:351:8: declaration uses `sorry`
+warning: Challenge.lean:366:8: declaration uses `sorry`
+warning: Challenge.lean:381:8: declaration uses `sorry`
+warning: Challenge.lean:396:8: declaration uses `sorry`
+warning: Challenge.lean:411:8: declaration uses `sorry`
+warning: Challenge.lean:429:8: declaration uses `sorry`
+Build completed successfully (9048 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ChenDalang2015.P2K_L_closed_form, ChenDalang2015.P2K_hasSum, ChenDalang2015.P2K_K_closed_form, ChenDalang2015.P2K_resolvent, ChenDalang2015.P2K_summable, ChenDalang2015.E2H_closed_form, ChenDalang2015.LA_Phi_E, ChenDalang2015.LA_Phi_E_false_at_neg_one, ChenDalang2015.T2_ExUni_p2_headline, ChenDalang2015.T2_Growth_one_zero_headline, ChenDalang2015.T2_Growth_one_top_headline, ChenDalang2015.T2_Growth_two_headline, ChenDalang2015.T2_Growth_three_zero_headline, ChenDalang2015.T2_Growth_three_top_headline, ChenDalang2015.P2_Ex_Exp_headline, ChenDalang2015.T2_ExUni_secondMoment_headline, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+⚠ [9058/9129] Replayed RoughHeatKernel.ChenDalang
+warning: RoughHeatKernel/ChenDalang.lean:165:24: Unused tactic linter: `ring` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Build completed successfully (9129 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ChenDalang2015.P2K_L_closed_form, ChenDalang2015.P2K_hasSum, ChenDalang2015.P2K_K_closed_form, ChenDalang2015.P2K_resolvent, ChenDalang2015.P2K_summable, ChenDalang2015.E2H_closed_form, ChenDalang2015.LA_Phi_E, ChenDalang2015.LA_Phi_E_false_at_neg_one, ChenDalang2015.T2_ExUni_p2_headline, ChenDalang2015.T2_Growth_one_zero_headline, ChenDalang2015.T2_Growth_one_top_headline, ChenDalang2015.T2_Growth_two_headline, ChenDalang2015.T2_Growth_three_zero_headline, ChenDalang2015.T2_Growth_three_top_headline, ChenDalang2015.P2_Ex_Exp_headline, ChenDalang2015.T2_ExUni_secondMoment_headline, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running con-ron kernel on solution
+con-ron: accepted 53543 declarations (--verified)
+con-ron kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!
