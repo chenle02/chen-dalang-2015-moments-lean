@@ -92,7 +92,7 @@ Selected Chen–Dalang (2015) results: explicit resolvents, nonnegative-data ful
 
 **In the paper.** The statement is not quoted here; read it in the paper.
 
-**In Lean.** `ChenDalang2015.P2K_L_closed_form` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.P2K_L_closed_form` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem P2K_L_closed_form {ν lam : ℝ} (hν : 0 < ν) (n : ℕ) {t : ℝ} (ht : 0 < t) (x : ℝ) :
@@ -103,7 +103,7 @@ theorem P2K_L_closed_form {ν lam : ℝ} (hν : 0 < ν) (n : ℕ) {t : ℝ} (ht 
         t ^ (((n : ℝ) - 1) / 2)
 ```
 
-**In Lean.** `ChenDalang2015.P2K_hasSum` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.P2K_hasSum` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem P2K_hasSum {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 < t) (x : ℝ) :
@@ -113,7 +113,7 @@ theorem P2K_hasSum {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 < t) (x : ℝ
           Phi (lam ^ 2 * Real.sqrt (t / (2 * ν)))))
 ```
 
-**In Lean.** `ChenDalang2015.P2K_K_closed_form` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.P2K_K_closed_form` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem P2K_K_closed_form {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 < t) (x : ℝ) :
@@ -123,14 +123,14 @@ theorem P2K_K_closed_form {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 < t) (
           Phi (lam ^ 2 * Real.sqrt (t / (2 * ν))))
 ```
 
-**In Lean.** `ChenDalang2015.P2K_resolvent` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.P2K_resolvent` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem P2K_resolvent {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 < t) (x : ℝ) :
     stConv (K ν lam) (L ν lam 0) t x = K ν lam t x - L ν lam 0 t x
 ```
 
-**In Lean.** `ChenDalang2015.P2K_summable` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.P2K_summable` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem P2K_summable {ν lam t : ℝ} (hν : 0 < ν) (ht : 0 ≤ t) {m : ℕ} (hm : 0 < m) :
@@ -151,7 +151,7 @@ theorem P2K_summable {ν lam t : ℝ} (hν : 0 < ν) (ht : 0 ≤ t) {m : ℕ} (h
 
 **In the paper.** The statement is not quoted here; read it in the paper.
 
-**In Lean.** `ChenDalang2015.E2H_closed_form` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.E2H_closed_form` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem E2H_closed_form {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 ≤ t) (x : ℝ) :
@@ -171,7 +171,7 @@ theorem E2H_closed_form {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 ≤ t) (
 
 **In the paper.** The statement is not quoted here; read it in the paper.
 
-**In Lean.** `ChenDalang2015.LA_Phi_E` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.LA_Phi_E` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem LA_Phi_E {b t : ℝ} (hb : 0 < b) (ht : 0 ≤ t) :
@@ -181,7 +181,7 @@ theorem LA_Phi_E {b t : ℝ} (hb : 0 < b) (ht : 0 ≤ t) :
         - 1 / (2 * b ^ 2) - Real.sqrt t / b
 ```
 
-**In Lean.** `ChenDalang2015.LA_Phi_E_false_at_neg_one` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.LA_Phi_E_false_at_neg_one` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem LA_Phi_E_false_at_neg_one :
@@ -204,7 +204,7 @@ theorem LA_Phi_E_false_at_neg_one :
 
 **In the paper.** The statement is not quoted here; read it in the paper.
 
-**In Lean.** `ChenDalang2015.T2_ExUni_p2_headline` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.T2_ExUni_p2_headline` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem T2_ExUni_p2_headline [IsProbabilityMeasure P]
@@ -233,7 +233,7 @@ theorem T2_ExUni_p2_headline [IsProbabilityMeasure P]
 
 **In the paper.** The statement is not quoted here; read it in the paper.
 
-**In Lean.** `ChenDalang2015.T2_Growth_one_zero_headline` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.T2_Growth_one_zero_headline` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem T2_Growth_one_zero_headline [IsProbabilityMeasure P]
@@ -250,7 +250,7 @@ theorem T2_Growth_one_zero_headline [IsProbabilityMeasure P]
         ∀ p : ℝ, 2 ≤ p → ((lip ^ 2 / 2 : ℝ) : EReal) ≤ lowerGrowthIndex (momentFn P u p)
 ```
 
-**In Lean.** `ChenDalang2015.T2_Growth_one_top_headline` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.T2_Growth_one_top_headline` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem T2_Growth_one_top_headline [IsProbabilityMeasure P]
@@ -268,7 +268,7 @@ theorem T2_Growth_one_top_headline [IsProbabilityMeasure P]
         lowerGrowthIndex (momentFn P u p) = ⊤ ∧ upperGrowthIndex (momentFn P u p) = ⊤
 ```
 
-**In Lean.** `ChenDalang2015.T2_Growth_two_headline` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.T2_Growth_two_headline` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem T2_Growth_two_headline [IsProbabilityMeasure P]
@@ -286,7 +286,7 @@ theorem T2_Growth_two_headline [IsProbabilityMeasure P]
             else Lip ^ 2 / 2 : ℝ) : EReal)
 ```
 
-**In Lean.** `ChenDalang2015.T2_Growth_three_zero_headline` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.T2_Growth_three_zero_headline` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem T2_Growth_three_zero_headline [IsProbabilityMeasure P]
@@ -304,7 +304,7 @@ theorem T2_Growth_three_zero_headline [IsProbabilityMeasure P]
           upperGrowthIndex (momentFn P u 2) = ((lam ^ 2 / 2 : ℝ) : EReal)
 ```
 
-**In Lean.** `ChenDalang2015.T2_Growth_three_top_headline` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.T2_Growth_three_top_headline` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem T2_Growth_three_top_headline [IsProbabilityMeasure P]
@@ -334,7 +334,7 @@ theorem T2_Growth_three_top_headline [IsProbabilityMeasure P]
 
 **In the paper.** The statement is not quoted here; read it in the paper.
 
-**In Lean.** `ChenDalang2015.P2_Ex_Exp_headline` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.P2_Ex_Exp_headline` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem P2_Ex_Exp_headline [IsProbabilityMeasure P]
@@ -367,7 +367,7 @@ theorem P2_Ex_Exp_headline [IsProbabilityMeasure P]
 
 **In the paper.** The statement is not quoted here; read it in the paper.
 
-**In Lean.** `ChenDalang2015.T2_ExUni_secondMoment_headline` in [Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/3422d034c99dd0dba99f1396cbb8b5df9bf8f75a/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
+**In Lean.** `ChenDalang2015.T2_ExUni_secondMoment_headline` in [CD2015Challenge.lean](https://github.com/chenle02/chen-dalang-2015-moments-lean/blob/d96f52ea0a7932aef31b626d5756727e885814f3/CD2015Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem T2_ExUni_secondMoment_headline [IsProbabilityMeasure P]
@@ -408,10 +408,10 @@ The full account of what each check covers and what it takes on trust is lean-pk
 
 ## How this was checked
 
-- lean-pkg's claims ledger: **ready**, every required claim is closed by the recorded receipts; 16 of 16 required claim(s) verified (`sha256:49e1453fdca7882c…`).
-- Build check (`lean-pkg gate`) at commit `3422d034c99d`: `sorry` count 0; axioms used: `Classical.choice`, `Quot.sound`, `propext`.
+- lean-pkg's claims ledger: **ready**, every required claim is closed by the recorded receipts; 16 of 16 required claim(s) verified (`sha256:2a8834e714aefafd…`).
+- Build check (`lean-pkg gate`) at commit `d96f52ea0a79`: `sorry` count 0; axioms used: `Classical.choice`, `Quot.sound`, `propext`.
 - Axioms of every claim: read from the built environment (Lean's `collectAxioms`) for all 216 claim(s) in `claims.yaml`, not only the theorems the build prints; none uses an axiom beyond `propext`, `Quot.sound` and `Classical.choice`.
-- Statement comparison (comparator) at commit `3422d034c99d`: 1 configuration(s), 16 theorem(s) compared (each Challenge statement against its Solution proof); permitted axioms: `Classical.choice`, `Quot.sound`, `propext`; definitions compared by name only: none.
+- Statement comparison (comparator) at commit `d96f52ea0a79`: 1 configuration(s), 16 theorem(s) compared (each Challenge statement against its Solution proof); permitted axioms: `Classical.choice`, `Quot.sound`, `propext`; definitions compared by name only: none.
 - Built on lean-pkg stack [lts-2026.10](https://github.com/lean-pkg/lean-pkg/blob/main/docs/stacks/lts-2026.10.md) (Lean `v4.35.0`, Mathlib `v4.35.0`), supported until 2028-04-30.
 
 ### Receipts
@@ -419,8 +419,11 @@ The full account of what each check covers and what it takes on trust is lean-pk
 | Receipt | Check | Commit | Date | Job | SHA-256 |
 |---|---|---|---|---|---|
 | `.lean-receipts/3422d03-public-native.json` | build | `3422d034c99d` | 2026-10-28 | — | `4cfc3cefc6b74dbeb919e31751cf16c324eaa622eacb53fbb6ac03720b572374` |
-| `.lean-receipts/3422d034c99d-comparator.json` (used here) | statement comparison | `3422d034c99d` | 2026-10-28 | — | `0c64c0f8ddc50c2e2b8abed52157b61d106ac8676c01479ca000235596686483` |
-| `.lean-receipts/3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029.json` (used here) | build | `3422d034c99d` | 2026-10-28 | — | `4cfc3cefc6b74dbeb919e31751cf16c324eaa622eacb53fbb6ac03720b572374` |
+| `.lean-receipts/3422d034c99d-comparator.json` | statement comparison | `3422d034c99d` | 2026-10-28 | — | `0c64c0f8ddc50c2e2b8abed52157b61d106ac8676c01479ca000235596686483` |
+| `.lean-receipts/3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029.json` | build | `3422d034c99d` | 2026-10-28 | — | `4cfc3cefc6b74dbeb919e31751cf16c324eaa622eacb53fbb6ac03720b572374` |
+| `.lean-receipts/d96f52e-module-native.json` | build | `d96f52ea0a79` | 2026-10-28 | — | `a1e0ada813eb48d37bc044c63db70a0933cf7d08baa5ddfb3bc9564953b0deb4` |
+| `.lean-receipts/d96f52ea0a79-comparator.json` (used here) | statement comparison | `d96f52ea0a79` | 2026-10-28 | — | `1d185be24b7580e29db2410113e55ac2af87a920840b81bb8ab139c52bcc509c` |
+| `.lean-receipts/d96f52ea0a79-systemd-user-chen-dalang-palomar-modules-20261028.service-d8216de8a9544a9ea35af9bedf4fa7ad-h-2db2e0fa6029.json` (used here) | build | `d96f52ea0a79` | 2026-10-28 | — | `a1e0ada813eb48d37bc044c63db70a0933cf7d08baa5ddfb3bc9564953b0deb4` |
 
 *(used here)*: the receipt the lean-pkg registry holds for this package, which the lines above read. SHA-256 is of the file as committed.
 
@@ -432,7 +435,7 @@ The full account of what each check covers and what it takes on trust is lean-pk
 ```bash
 git clone https://github.com/chenle02/chen-dalang-2015-moments-lean
 cd chen-dalang-2015-moments-lean
-git checkout 3422d034c99dd0dba99f1396cbb8b5df9bf8f75a   # the commit the build check binds
+git checkout d96f52ea0a7932aef31b626d5756727e885814f3   # the commit the build check binds
 lake exe cache get
 lake build
 ```
