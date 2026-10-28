@@ -68,68 +68,68 @@ status:
   main_results:
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.P2K_L_closed_form
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.P2K_hasSum
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.P2K_K_closed_form
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.P2K_resolvent
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.P2K_summable
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.E2H_closed_form
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.LA_Phi_E
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.LA_Phi_E_false_at_neg_one
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.T2_ExUni_p2_headline
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.T2_Growth_one_zero_headline
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.T2_Growth_one_top_headline
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.T2_Growth_two_headline
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.T2_Growth_three_zero_headline
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.T2_Growth_three_top_headline
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.P2_Ex_Exp_headline
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.T2_ExUni_secondMoment_headline
-    file: Solution.lean
-    challenge_file: Challenge.lean
+    file: CD2015Solution.lean
+    challenge_file: CD2015Challenge.lean
 automation:
   methods:
   - method: agent
@@ -263,7 +263,7 @@ alignment:
       nu)) Phi(lam^2 sqrt(t/(2 nu))) - 1, with * the space-time convolution.'
   - source: null
     lean: ChenDalang2015.P2K_L_closed_form
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-p2k-l-closed-form
     status: reusable
@@ -271,7 +271,7 @@ alignment:
       b = lam^2/sqrt(4 pi nu) inlined.'
   - source: null
     lean: ChenDalang2015.P2K_hasSum
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-p2k-has-sum
     status: reusable
@@ -279,21 +279,21 @@ alignment:
       to the closed form of K(t,x).'
   - source: null
     lean: ChenDalang2015.P2K_K_closed_form
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-p2k-k-closed-form
     status: reusable
     note: 'Palomar Challenge statement of P2:K, display E:K: closed form of K(t,x).'
   - source: null
     lean: ChenDalang2015.P2K_resolvent
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-p2k-resolvent
     status: reusable
     note: 'Palomar Challenge statement of P2:K, display E:KS-Kn-K0: (K * L_0)(t,x) = K(t,x) - L_0(t,x).'
   - source: null
     lean: ChenDalang2015.P2K_summable
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-p2k-summable
     status: reusable
@@ -301,7 +301,7 @@ alignment:
       for t >= 0, m >= 1, with B_n inlined.'
   - source: null
     lean: ChenDalang2015.E2H_closed_form
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-e2h-closed-form
     status: reusable
@@ -309,14 +309,14 @@ alignment:
       sqrt(t/(2 nu))) - 1.'
   - source: null
     lean: ChenDalang2015.LA_Phi_E
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-la-phi-e
     status: reusable
     note: Palomar Challenge statement of Lemma LA:Phi-E for b > 0.
   - source: null
     lean: ChenDalang2015.LA_Phi_E_false_at_neg_one
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-la-phi-e-false-at-neg-one
     status: reusable
@@ -1809,7 +1809,7 @@ alignment:
       augmented white-noise space, with both p=2 indices 1/2.
   - source: null
     lean: ChenDalang2015.T2_ExUni_p2_headline
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-t2-exuni-p2-headline
     status: reusable
@@ -1817,14 +1817,14 @@ alignment:
       coefficient.
   - source: null
     lean: ChenDalang2015.T2_Growth_one_zero_headline
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-t2-growth-one-zero-headline
     status: reusable
     note: Theorem 2.12(1), zero offset, with full existence and the lower bound for every real p ≥ 2.
   - source: null
     lean: ChenDalang2015.T2_Growth_one_top_headline
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-t2-growth-one-top-headline
     status: reusable
@@ -1832,14 +1832,14 @@ alignment:
       p ≥ 2; zero initial measure is allowed.
   - source: null
     lean: ChenDalang2015.T2_Growth_two_headline
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-t2-growth-two-headline
     status: reusable
     note: Theorem 2.12(2) at p = 2, with full existence and the exact strict-branch upper bound.
   - source: null
     lean: ChenDalang2015.T2_Growth_three_zero_headline
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-t2-growth-three-zero-headline
     status: reusable
@@ -1847,7 +1847,7 @@ alignment:
       existence.
   - source: null
     lean: ChenDalang2015.T2_Growth_three_top_headline
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-t2-growth-three-top-headline
     status: reusable
@@ -1855,7 +1855,7 @@ alignment:
       p ≥ 2.
   - source: null
     lean: ChenDalang2015.P2_Ex_Exp_headline
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-p2-ex-exp-headline
     status: reusable
@@ -1888,7 +1888,7 @@ alignment:
       satisfying the stated square identity.
   - source: null
     lean: ChenDalang2015.T2_ExUni_secondMoment_headline
-    module: Solution.lean
+    module: CD2015Solution.lean
     kind: theorem
     claim: chen-dalang-15-moments-lean/palomar-second-moment-headline
     status: reusable

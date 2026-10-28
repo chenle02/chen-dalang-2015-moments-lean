@@ -32,7 +32,7 @@ def blocks(path):
     return result
 
 def main():
-    challenge = ROOT / 'Challenge.lean'
+    challenge = ROOT / 'CD2015Challenge.lean'
     actual = blocks(challenge)
     required = {'Defs', 'GrowthDefs', 'StochDefs'}
     if set(actual) != required:

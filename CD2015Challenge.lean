@@ -30,7 +30,7 @@ set_option autoImplicit false
 
 namespace ChenDalang15
 
--- BEGIN SHARED DEFINITIONS (keep byte-identical with Challenge.lean)
+-- BEGIN SHARED DEFINITIONS (keep byte-identical with CD2015Challenge.lean)
 
 /-- A named numeral instance keeps the shared statement layer independent of
 module-local auxiliary-proof sharing when elaborating L² dictionaries. -/
@@ -104,7 +104,7 @@ noncomputable def J0 (ν : ℝ) (μ : MeasureTheory.Measure ℝ) (t x : ℝ) : �
 end ChenDalang15
 -- END SHARED DEFINITIONS: GrowthDefs
 
--- BEGIN SHARED DEFINITIONS: StochDefs (keep byte-identical with Challenge.lean)
+-- BEGIN SHARED DEFINITIONS: StochDefs (keep byte-identical with CD2015Challenge.lean)
 
 noncomputable section
 

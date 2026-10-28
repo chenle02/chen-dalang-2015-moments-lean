@@ -1,5 +1,5 @@
 name = "chen-dalang-15-moments-lean"
-defaultTargets = ["ChenDalang15", "Challenge", "Solution"]
+defaultTargets = ["ChenDalang15", "CD2015Challenge", "CD2015Solution"]
 
 [[require]]
 name = "mathlib"
@@ -21,9 +21,9 @@ name = "ChenDalang15"
 globs = ["ChenDalang15.+"]
 
 [[lean_lib]]
-name = "Challenge"
-roots = ["Challenge"]
+name = "CD2015Challenge"
+roots = ["CD2015Challenge"]
 
 [[lean_lib]]
-name = "Solution"
-roots = ["Solution"]
+name = "CD2015Solution"
+roots = ["CD2015Solution"]

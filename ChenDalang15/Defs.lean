@@ -5,10 +5,10 @@ public import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
 public import Mathlib.Topology.Algebra.InfiniteSum.Real
 
 /-!
-# Statement-level definitions (shared verbatim with `Challenge.lean`)
+# Statement-level definitions (shared verbatim with `CD2015Challenge.lean`)
 
 The objects of Chen–Dalang (2015) that appear in the advertised theorem statements. Palomar
-requires the Challenge to import Mathlib only, so `Challenge.lean` carries a byte-identical
+requires the Challenge to import Mathlib only, so `CD2015Challenge.lean` carries a byte-identical
 copy of the block between the markers below; `scripts/check-challenge-defs.py` (run by
 `verify.sh`) fails if the two copies differ, and Comparator checks that the elaborated
 constants agree.
@@ -20,7 +20,7 @@ set_option autoImplicit false
 
 namespace ChenDalang15
 
--- BEGIN SHARED DEFINITIONS (keep byte-identical with Challenge.lean)
+-- BEGIN SHARED DEFINITIONS (keep byte-identical with CD2015Challenge.lean)
 
 /-- A named numeral instance keeps the shared statement layer independent of
 module-local auxiliary-proof sharing when elaborating L² dictionaries. -/

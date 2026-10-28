@@ -1,6 +1,6 @@
 {
-  "challenge_module": "Challenge",
-  "solution_module": "Solution",
+  "challenge_module": "CD2015Challenge",
+  "solution_module": "CD2015Solution",
   "theorem_names": [
     "ChenDalang2015.P2K_L_closed_form",
     "ChenDalang2015.P2K_hasSum",

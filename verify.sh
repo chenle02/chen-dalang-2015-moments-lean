@@ -17,7 +17,7 @@ unset LANGUAGE
 LOG=${1:?usage: bash verify.sh LOG}
 # The modules the receipt certifies: the proof and the axioms report (the Challenge's sorry is by design and
 # is judged by comparator-receipt, not here).
-MODULES="Solution ChenDalang15.Axioms"
+MODULES="CD2015Solution ChenDalang15.Axioms"
 # Per-claim axioms read from the built environment (lean-pkg's ClaimAxioms.lean, core Lean only):
 # `claim-axioms: NAME AXIOMS` / `claim-missing: NAME` for every claim of claims.yaml, then
 # `claim-axioms-done: N`. The receipt refuses a missing or unchecked claim and sorryAx.
@@ -120,8 +120,8 @@ echo "lean-pkg-build: begin" >>"$LOG"
 lake build $MODULES >>"$LOG" 2>&1
 echo "lean-pkg-build: end" >>"$LOG"
 ca_dir=$(mktemp -d)
-# Dependencies also ship a module named Solution. The read-only environment
-# probe must load this freshly built package's Solution before dependency roots.
+# Entry modules have project-specific roots. The read-only environment
+# probe still loads this freshly built package before dependency roots.
 claim_axioms_run "$LOG" "$ca_dir" "$PWD/.lake/build/lib/lean:$(lake env printenv LEAN_PATH)"
 rm -rf "$ca_dir"
 sorry=$(grep -c -E "declaration uses ['\`]sorry['\`]" "$LOG" || true)

@@ -4,6 +4,12 @@ Selected results for the nonlinear stochastic heat equation with rough initial
 conditions: explicit resolvents, full nonnegative-data p = 2 existence and
 uniqueness, exact quasilinear second moments, and growth indices.
 
+> Compatibility revision in progress: the entry modules now have project-specific
+> names to avoid dependency-root shadowing in Palomar. The historical generated
+> record below retains its original source links; fresh source-bound checks will
+> replace it before this revision is submitted. Mathematical declarations and
+> proof bodies are unchanged.
+
 ## What is proved
 
 The selected entry contains 16 Challenge statements. It includes full random-field

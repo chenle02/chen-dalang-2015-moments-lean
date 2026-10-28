@@ -18,8 +18,8 @@ L2-continuous in the output variables. Almost-sure uniqueness is separately at
 each positive-time space point, not a common exceptional-set assertion.
 
 The exact Lean headers below state every parameter, hypothesis and conjunct.
-Their symbols are defined in [Challenge.lean](../Challenge.lean); proofs are in
-[Solution.lean](../Solution.lean) and the imported development.
+Their symbols are defined in [CD2015Challenge.lean](../CD2015Challenge.lean); proofs are in
+[CD2015Solution.lean](../CD2015Solution.lean) and the imported development.
 
 ## Proposition 2.2: iterated kernels
 

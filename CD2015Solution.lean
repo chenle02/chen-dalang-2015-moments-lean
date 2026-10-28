@@ -10,11 +10,11 @@ public import ChenDalang15.H
 public import ChenDalang15.PhiE
 
 /-!
-# Solution: proofs of the statements in `Challenge.lean`
+# Solution: proofs of the statements in `CD2015Challenge.lean`
 
 Each theorem is proved by the corresponding result of the development (`ChenDalang15.*`).
 The definitions `G`, `stConv`, `L`, `K`, `Phi` come from `ChenDalang15.Defs`, whose marked block
-is byte-identical to the one in `Challenge.lean`; Comparator checks the constants agree.
+is byte-identical to the one in `CD2015Challenge.lean`; Comparator checks the constants agree.
 -/
 
 set_option autoImplicit false

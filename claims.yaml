@@ -97,56 +97,56 @@ claims:
   kind: theorem
   summary: "Palomar Challenge statement of P2:K, E:KS-LB: closed form of L_n(t,x) for nu > 0, t > 0, with b = lam^2/sqrt(4 pi nu) inlined."
   keywords: [palomar, challenge]
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-p2k-has-sum
   decl: ChenDalang2015.P2K_hasSum
   kind: theorem
   summary: "Palomar Challenge statement of P2:K, E:K with convergence: the series of L_n(t,x) converges to the closed form of K(t,x)."
   keywords: [palomar, challenge]
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-p2k-k-closed-form
   decl: ChenDalang2015.P2K_K_closed_form
   kind: theorem
   summary: "Palomar Challenge statement of P2:K, display E:K: closed form of K(t,x)."
   keywords: [palomar, challenge]
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-p2k-resolvent
   decl: ChenDalang2015.P2K_resolvent
   kind: theorem
   summary: "Palomar Challenge statement of P2:K, display E:KS-Kn-K0: (K * L_0)(t,x) = K(t,x) - L_0(t,x)."
   keywords: [palomar, challenge]
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-p2k-summable
   decl: ChenDalang2015.P2K_summable
   kind: theorem
   summary: "Palomar Challenge statement of the P2:K summability claim: the series of B_n(t)^(1/m) converges for t >= 0, m >= 1, with B_n inlined."
   keywords: [palomar, challenge]
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-e2h-closed-form
   decl: ChenDalang2015.E2H_closed_form
   kind: theorem
   summary: "Palomar Challenge statement of display E2:H: (1 * K)(t,x) = 2 exp(lam^4 t/(4 nu)) Phi(lam^2 sqrt(t/(2 nu))) - 1."
   keywords: [palomar, challenge]
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-la-phi-e
   decl: ChenDalang2015.LA_Phi_E
   kind: theorem
   summary: "Palomar Challenge statement of Lemma LA:Phi-E for b > 0."
   keywords: [palomar, challenge]
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-la-phi-e-false-at-neg-one
   decl: ChenDalang2015.LA_Phi_E_false_at_neg_one
   kind: theorem
   summary: "Palomar Challenge statement: the identity of LA:Phi-E fails at b = -1, t = 1 (erratum E1)."
   keywords: [palomar, challenge]
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/integral-g-mul-g-time
   decl: ChenDalang15.integral_G_mul_G_time
@@ -1624,7 +1624,7 @@ claims:
   keywords:
   - headline
   - comparator
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-t2-growth-one-zero-headline
   decl: ChenDalang2015.T2_Growth_one_zero_headline
@@ -1633,7 +1633,7 @@ claims:
   keywords:
   - headline
   - comparator
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-t2-growth-one-top-headline
   decl: ChenDalang2015.T2_Growth_one_top_headline
@@ -1643,7 +1643,7 @@ claims:
   keywords:
   - headline
   - comparator
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-t2-growth-two-headline
   decl: ChenDalang2015.T2_Growth_two_headline
@@ -1652,7 +1652,7 @@ claims:
   keywords:
   - headline
   - comparator
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-t2-growth-three-zero-headline
   decl: ChenDalang2015.T2_Growth_three_zero_headline
@@ -1661,7 +1661,7 @@ claims:
   keywords:
   - headline
   - comparator
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-t2-growth-three-top-headline
   decl: ChenDalang2015.T2_Growth_three_top_headline
@@ -1670,7 +1670,7 @@ claims:
   keywords:
   - headline
   - comparator
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/palomar-p2-ex-exp-headline
   decl: ChenDalang2015.P2_Ex_Exp_headline
@@ -1680,7 +1680,7 @@ claims:
   keywords:
   - headline
   - comparator
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable
 - id: chen-dalang-15-moments-lean/heat-kernel-causal-upstream-bridge
   decl: ChenDalang15.HeatCausalKernel.heatK_eq_upstream
@@ -1713,5 +1713,5 @@ claims:
   kind: theorem
   summary: Full solution existence and exact quasilinear second moments for every solution at positive times, with general diffusivity, nonnegative Gaussian-tempered data and a Lipschitz coefficient satisfying the stated square identity.
   keywords: [second-moment, full-existence, quasilinear, challenge]
-  file: Solution.lean
+  file: CD2015Solution.lean
   status: reusable

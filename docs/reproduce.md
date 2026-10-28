@@ -39,7 +39,7 @@ Keep failed runs and corrected successors separate. Never edit or rebind a
 receipt to a changed source.
 
 The Comparator configuration is comparator/config-chen-dalang-2015.json, with
-Challenge and Solution as its statement/proof modules and 16 selected targets.
+CD2015Challenge and CD2015Solution as its statement/proof modules and 16 selected targets.
 The native audit covers all 216 listed declarations. These counts describe
 different checks, not a percentage of the full paper.
 

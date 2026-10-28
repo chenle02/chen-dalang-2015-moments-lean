@@ -54,7 +54,7 @@ set_option autoImplicit false
 
 @[expose] public section
 
--- BEGIN SHARED DEFINITIONS: StochDefs (keep byte-identical with Challenge.lean)
+-- BEGIN SHARED DEFINITIONS: StochDefs (keep byte-identical with CD2015Challenge.lean)
 
 noncomputable section
 
