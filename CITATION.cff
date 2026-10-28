@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this formalization and the source paper described in README.md."
+title: "Selected moments and growth indices for the stochastic heat equation in Lean"
+type: software
+authors:
+  - family-names: Chen
+    given-names: Le
+license: Apache-2.0
+repository-code: "https://github.com/chenle02/chen-dalang-2015-moments-lean"

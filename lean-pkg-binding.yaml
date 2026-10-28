@@ -1,0 +1,9 @@
+schema: lean-pkg-binding/1
+docs_descendants: true
+build_inputs:
+- verify.sh
+- scripts/*
+- comparator/*.json
+- coverage.yaml
+- data/source-baselines/*.json
+- .github/workflows/*.yml

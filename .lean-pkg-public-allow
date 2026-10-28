@@ -1,0 +1,4 @@
+# lean-pkg public allow list: `allow:` lines only (public-safety reads them; block and warn lines
+# belong in the untracked .lean-pkg-private-patterns). Committed on purpose: nothing here is private.
+# carried from .lean-pkg-private-patterns by `lean-pkg repo export` (2026-10-28)
+allow: (?i)^arXiv:\d{4}\.\d{4,5}(v\d+)?$

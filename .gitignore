@@ -1,0 +1,8 @@
+/.lake/
+*.olean
+*.ilean
+*.ltar
+/_site/
+/.lean-pkg-private-patterns
+/.secrets/
+/verification-local/

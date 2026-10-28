@@ -1,0 +1,90 @@
+schema: coverage/1
+package: chen-dalang-15-moments-lean
+kind: paper
+stack: lts-2026.10
+manuscript:
+  title: Moments and growth indices for the nonlinear stochastic heat equation with rough initial conditions
+  version: "arXiv:1307.0600v3"
+  eprint_sha256: "f4dd31a4e6597b7216d32edefec194e554b08e51b3031b296aa5bbaae70fefb5"
+summary: 'Selected Chen–Dalang (2015) results: explicit resolvents, nonnegative-data full p = 2 existence
+  with integral L2 continuity, uniqueness, proved second moments and growth indices, plus lower-growth
+  conclusions for all real p at least 2; 16 selected Challenge statements with 200 supporting declarations.
+  The full paper is not claimed formalized.'
+rows:
+- paper:
+    number: Proposition 2.2
+    title: Explicit heat-kernel resolvent formulas, convergence and summability
+  class: same-assumptions
+  claims:
+  - chen-dalang-15-moments-lean/palomar-p2k-l-closed-form
+  - chen-dalang-15-moments-lean/palomar-p2k-has-sum
+  - chen-dalang-15-moments-lean/palomar-p2k-k-closed-form
+  - chen-dalang-15-moments-lean/palomar-p2k-resolvent
+  - chen-dalang-15-moments-lean/palomar-p2k-summable
+  note: The scalar summability theorem also permits its proved zero-time endpoint.
+- paper:
+    number: Display 2.18
+    title: Integrated resolvent in closed form
+  class: same-assumptions
+  claims:
+  - chen-dalang-15-moments-lean/palomar-e2h-closed-form
+  note: General positive diffusivity; the zero coefficient case is included.
+- paper:
+    number: Appendix Lemma A.1
+    title: Positive-parameter identity and counterexample to the negative extension
+  class: inputs-supplied
+  claims:
+  - chen-dalang-15-moments-lean/palomar-la-phi-e
+  - chen-dalang-15-moments-lean/palomar-la-phi-e-false-at-neg-one
+  note: The printed negative-b extension is false; a separate selected statement refutes the specified
+    b = -1, t = 1 case.
+  inputs:
+  - positive b for the identity, replacing the printed nonzero-b condition
+- paper:
+    number: Theorem 2.4, adopted p = 2 existence and uniqueness
+    title: Full solution existence and uniqueness
+  class: inputs-supplied
+  claims:
+  - chen-dalang-15-moments-lean/palomar-t2-exuni-p2-headline
+  note: The actual integral is L2-continuous; uniqueness is a.s. separately at each positive-time space
+    point.
+  inputs:
+  - nonnegative initial measure, relative to the paper's signed-data existence statement
+- paper:
+    number: Theorem 2.12, adopted growth conclusions
+    title: Growth indices from constructed full solutions
+  class: inputs-supplied
+  claims:
+  - chen-dalang-15-moments-lean/palomar-t2-growth-one-zero-headline
+  - chen-dalang-15-moments-lean/palomar-t2-growth-one-top-headline
+  - chen-dalang-15-moments-lean/palomar-t2-growth-two-headline
+  - chen-dalang-15-moments-lean/palomar-t2-growth-three-zero-headline
+  - chen-dalang-15-moments-lean/palomar-t2-growth-three-top-headline
+  note: Part (1) covers every real p at least 2. The finite upper and exact branches have p = 2 scope.
+    The individual zero/nonzero-offset branches retain their stated data hypotheses.
+  inputs:
+  - nonnegative initial data for the adopted part (2), relative to the paper's signed-data statement
+- paper:
+    number: Proposition 2.14, p = 2
+    title: Exact transition for exponential initial density
+  class: same-assumptions
+  claims:
+  - chen-dalang-15-moments-lean/palomar-p2-ex-exp-headline
+  note: Literal exponential density, nonzero coefficient and positive decay parameter; full existence
+    and the moment input are proved.
+- paper:
+    number: Theorem 2.4(5), adopted nonnegative-data exact second moment
+    title: Quasilinear second moment with full existence
+  class: inputs-supplied
+  claims:
+  - chen-dalang-15-moments-lean/palomar-second-moment-headline
+  note: General positive diffusivity and the stated Lipschitz coefficient-square identity, including zero
+    offset/coefficient cases; an explicit convolution formula holds for every full solution.
+  inputs:
+  - nonnegative initial measure, relative to the paper's signed-data statement
+- paper:
+    number: Results outside this selected entry
+    title: Excluded broader statements
+  class: outside
+  note: Signed-data existence, higher-p upper bounds, two-point stochastic formulas, sample-path continuity
+    and complete coverage of the paper are not claimed by this entry.

@@ -1,0 +1,29 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ChenDalang2015.P2K_L_closed_form",
+    "ChenDalang2015.P2K_hasSum",
+    "ChenDalang2015.P2K_K_closed_form",
+    "ChenDalang2015.P2K_resolvent",
+    "ChenDalang2015.P2K_summable",
+    "ChenDalang2015.E2H_closed_form",
+    "ChenDalang2015.LA_Phi_E",
+    "ChenDalang2015.LA_Phi_E_false_at_neg_one",
+    "ChenDalang2015.T2_ExUni_p2_headline",
+    "ChenDalang2015.T2_Growth_one_zero_headline",
+    "ChenDalang2015.T2_Growth_one_top_headline",
+    "ChenDalang2015.T2_Growth_two_headline",
+    "ChenDalang2015.T2_Growth_three_zero_headline",
+    "ChenDalang2015.T2_Growth_three_top_headline",
+    "ChenDalang2015.P2_Ex_Exp_headline",
+    "ChenDalang2015.T2_ExUni_secondMoment_headline"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

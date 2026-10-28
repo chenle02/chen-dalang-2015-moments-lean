@@ -1,0 +1,17 @@
+name: Palomar mechanical preflight
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  palomar-preflight:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@a93fc88c092faeef1a92b1c905e688aab8e80795
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.sha }}
+      pipeline_commit: a93fc88c092faeef1a92b1c905e688aab8e80795
+      request_id: preflight001
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: '{"comparator_config_path":"comparator/config-chen-dalang-2015.json","authorization_relationship":"I am a responsible author or maintainer"}'

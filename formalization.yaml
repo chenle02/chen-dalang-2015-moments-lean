@@ -1,0 +1,149 @@
+version: v0.4
+project:
+  name: chen-dalang-15-moments-lean
+  description: 'Lean 4 formalization of selected results from Chen and Dalang (2015): heat-kernel resolvents,
+    full nonnegative-data random-field existence and uniqueness, exact quasilinear second moments and
+    growth indices. The stochastic scope is p = 2, with lower-growth conclusions for every real p >= 2.'
+  authors:
+  - Le Chen
+  responsible_maintainers:
+  - Le Chen
+  license: Apache-2.0
+sources:
+- title: Moments and growth indices for the nonlinear stochastic heat equation with rough initial conditions
+  authors:
+  - Le Chen
+  - Robert C. Dalang
+  id: arXiv:1307.0600v3
+  type: journal article
+  location: https://doi.org/10.1214/14-AOP954
+  relationship: formalizes
+  note: Ann. Probab. 43(6) (2015), 3006–3051. The public v3 is the publisher reprint; the author manuscript
+    is not byte-identical. Selected statement crosswalk and exact source hashes are documented in docs/PAPER_SOURCE.md.
+related_formalizations:
+- id: https://github.com/leanprover-community/mathlib4
+  relationship: builds-on
+  note: Exact Mathlib pin in lake-manifest.json.
+- id: https://github.com/chenle02/rough-heat-kernel-lean
+  relationship: builds-on
+  note: Exact scientific pin d4b93224f565606f4c55681f232cc90d2efbb796.
+- id: https://github.com/chenle02/walsh-integral-lean
+  relationship: builds-on
+  note: Exact scientific pin e0547e67d6a0604f0ed40d06ca7f3b87305bf300.
+classification:
+  arxiv:
+  - math.PR
+  msc2020:
+  - 60H15
+  - 35R60
+  - 60G60
+status:
+  scope: 'Proved at general positive diffusivity: explicit resolvent formulas and summability (Proposition
+    2.2), display 2.18, and the positive-b form of Appendix Lemma A.1 with a counterexample to its printed
+    negative-b extension. For nonnegative Gaussian-tempered initial measures and globally Lipschitz coefficients,
+    the development constructs an actual Walsh integral and full random-field solutions, including L2
+    continuity of the integral, and proves a.s. uniqueness separately at each positive-time space point.
+    It derives second-moment bounds and the exact quasilinear formula under the stated coefficient-square
+    identity. Growth conclusions cover Theorem 2.12(1) for every real p >= 2 and its applicable infinite-index
+    branches, parts (2)-(3) at p = 2, and Proposition 2.14 at p = 2. Signed-data existence, higher-p upper
+    bounds, two-point stochastic formulas, pathwise continuity and full-paper coverage are excluded.'
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - Classical.choice
+  - Quot.sound
+  - propext
+  main_results:
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.P2K_L_closed_form
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.P2K_hasSum
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.P2K_K_closed_form
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.P2K_resolvent
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.P2K_summable
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.E2H_closed_form
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.LA_Phi_E
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.LA_Phi_E_false_at_neg_one
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.T2_ExUni_p2_headline
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.T2_Growth_one_zero_headline
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.T2_Growth_one_top_headline
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.T2_Growth_two_headline
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.T2_Growth_three_zero_headline
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.T2_Growth_three_top_headline
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.P2_Ex_Exp_headline
+    file: Solution.lean
+    challenge_file: Challenge.lean
+  - comparator_config: comparator/config-chen-dalang-2015.json
+    declaration: ChenDalang2015.T2_ExUni_secondMoment_headline
+    file: Solution.lean
+    challenge_file: Challenge.lean
+automation:
+  methods:
+  - method: agent
+    models: []
+    framework: Claude Code and OpenAI Codex
+    tool_setup: Agents assisted with implementation, API search, debugging, documentation and statement-fidelity
+      review under Le Chen's direction.
+    cost:
+      wall_time: not tracked consistently
+      spend_usd: not tracked
+      hardware: local workstations
+    prompting_notes: Exact manuscript statements, pinned dependencies, explicit scope boundaries, build/axiom
+      checks and independent statement/proof comparison.
+  spend_usd: not tracked
+  notes: Le Chen is responsible for the formalization and publication decisions. AI assistance included
+    Claude Code and OpenAI Codex; no unrecorded model versions or human review are claimed.
+fidelity:
+  divergences: The adopted stochastic scope is nonnegative data and p = 2, with all-real-p lower conclusions
+    as stated. Appendix A.1 requires positive b; a selected counterexample records failure of the printed
+    negative-b extension. The public manuscript source is a production-format counterpart, not a byte-identical
+    copy of the author manuscript.
+review:
+  status: unchecked
+  reviewers: []
+  notes: Mechanical build, axiom and three-kernel statement/proof checks and fresh-context agent fidelity
+    reviews have been used. These do not constitute a documented independent human review of the Lean
+    formalization. Public-root receipts will identify the exact verified source.
+acknowledgements: Developed and verified with lean-pkg (https://github.com/lean-pkg/lean-pkg; doi:10.5281/zenodo.23272098),
+  using Lean, Mathlib, RoughHeatKernel and WalshIntegral.
