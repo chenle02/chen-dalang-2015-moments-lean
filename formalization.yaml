@@ -62,9 +62,9 @@ status:
   - Quot.sound
   - propext
   evidence:
-    commit: 3422d034c99dd0dba99f1396cbb8b5df9bf8f75a
-    gate_receipt: .lean-receipts/3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029.json
-    comparator_receipt: .lean-receipts/3422d034c99d-comparator.json
+    commit: d96f52ea0a7932aef31b626d5756727e885814f3
+    gate_receipt: .lean-receipts/d96f52ea0a79-systemd-user-chen-dalang-palomar-modules-20261028.service-d8216de8a9544a9ea35af9bedf4fa7ad-h-2db2e0fa6029.json
+    comparator_receipt: .lean-receipts/d96f52ea0a79-comparator.json
   main_results:
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.P2K_L_closed_form

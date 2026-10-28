@@ -1,0 +1,8 @@
+{
+  "not_a_receipt": true,
+  "scientific_source": "d96f52ea0a7932aef31b626d5756727e885814f3",
+  "probe_sha256": "cf05deaee19c48b4397c26a263d772d5b3106a63183543fdb826b5951649223f",
+  "exact_core_audit_component_unchanged": true,
+  "original_control_source": "3422d034c99dd0dba99f1396cbb8b5df9bf8f75a",
+  "build_module_target_changed_only_outside_probe": true
+}

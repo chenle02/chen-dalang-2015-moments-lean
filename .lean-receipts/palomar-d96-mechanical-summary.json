@@ -1,0 +1,18 @@
+{
+  "not_a_lean_pkg_receipt": true,
+  "mechanical_status": "pass",
+  "source": {
+    "bytes": 1086596,
+    "commit": "d96f52ea0a7932aef31b626d5756727e885814f3",
+    "repository": "chenle02/chen-dalang-2015-moments-lean",
+    "repository_url": "https://github.com/chenle02/chen-dalang-2015-moments-lean",
+    "tree_url": "https://github.com/chenle02/chen-dalang-2015-moments-lean/tree/d96f52ea0a7932aef31b626d5756727e885814f3"
+  },
+  "workflow_url": "https://github.com/chenle02/chen-dalang-2015-moments-lean/actions/runs/40758430654",
+  "pipeline_commit": "a93fc88c092faeef1a92b1c905e688aab8e80795",
+  "mode": "full",
+  "execution_profile": "palomar-standard-v1",
+  "mechanical_report_sha256": "23617f3d1f9c476194b093a8feace3b8b1f7596cf69905eb1253edbd27b56352",
+  "exact_challenge_module": "CD2015Challenge",
+  "errors": []
+}
