@@ -1,0 +1,43 @@
+{
+  "schema": "lower-receipt/1",
+  "commit": "3422d034c99dd0dba99f1396cbb8b5df9bf8f75a",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_rev": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "sorry_count": 0,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "report_sha256": "d4d0352b7013acc6709a62b8de7d5a5f3357def071bdd06f683dd8c8ee8c92ff",
+  "job_id": "systemd-user:chen-dalang-public-native-20261028.service:a158e650556f4beabbe4c8f73edd8d62@h-2db2e0fa6029",
+  "checker": "verify.sh (lake build Solution ChenDalang15.Axioms; #print axioms)",
+  "generated_at": "2026-10-28T18:22:12Z",
+  "job_stdout_sha256": "b85918a174489e6338a4af3616b34dc12c9799841d2937e6b25fa5a77379fac1",
+  "manifest_sha256": "23e6801b35b58d7e81615c53fc998b80ca4e2c6ba67268ef885458661338b237",
+  "log_commit_bound": true,
+  "claim_axioms": {
+    "checked": 216,
+    "nonstandard": [],
+    "missing": []
+  },
+  "producer": {
+    "lean_pkg": "0.22.0",
+    "install": "installed",
+    "commit": null,
+    "dirty": null,
+    "sources_sha256": "2f46280da99e779e284b3ab3c6d77634b8f828a694146fbb0afb0c8e518a5580",
+    "source_files": 95,
+    "python": "3.12.3",
+    "bytecode_tag": "cpython-312",
+    "bytecode_files": 80,
+    "bytecode_sha256": "f3fbc5a78d593ab338ca400d0f84ab4fd955d1c5f3fafc7e7e93a68e0f09d595",
+    "other_bytecode_files": 0
+  },
+  "unit_properties_sha256": "84281743909a0fc016b9dede668f47bde8d9a8a81bcbee72e3f09b15fa546c7a",
+  "report_compressed": {
+    "format": "gzip",
+    "sha256": "eea41a8876a3df64f3b966d4d00c9fe9c69646c620d6c78248e50da964d5ec5b",
+    "bytes": 51911
+  }
+}

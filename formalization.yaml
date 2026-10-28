@@ -1,3 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# Rendered by `lean-pkg formalization <name>` from the lean-pkg registry and the package
+# repository at HEAD (formalization.yaml v0.4, mathlib-initiative). Paths are
+# repository-relative. Derived keys are regenerated on every run: version, project.name,
+# project.license, automation.notes, status.sorry_count, status.axioms, status.evidence,
+# status.main_results, and alignment when claims.yaml is tracked. Every other key is kept
+# from this file. A value starting "[PLACEHOLDER]" is data the registry does not hold:
+# fill it in by hand (it is kept) or set the registry field it names.
 version: v0.4
 project:
   name: chen-dalang-15-moments-lean
@@ -53,6 +61,10 @@ status:
   - Classical.choice
   - Quot.sound
   - propext
+  evidence:
+    commit: 3422d034c99dd0dba99f1396cbb8b5df9bf8f75a
+    gate_receipt: .lean-receipts/3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029.json
+    comparator_receipt: .lean-receipts/3422d034c99d-comparator.json
   main_results:
   - comparator_config: comparator/config-chen-dalang-2015.json
     declaration: ChenDalang2015.P2K_L_closed_form
@@ -145,5 +157,1745 @@ review:
   notes: Mechanical build, axiom and three-kernel statement/proof checks and fresh-context agent fidelity
     reviews have been used. These do not constitute a documented independent human review of the Lean
     formalization. Public-root receipts will identify the exact verified source.
-acknowledgements: Developed and verified with lean-pkg (https://github.com/lean-pkg/lean-pkg; doi:10.5281/zenodo.23272098),
+alignment:
+  generated_from: claims.yaml
+  statements:
+  - source: null
+    lean: ChenDalang15.G_eq_formula
+    module: ChenDalang15/Kernel.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/g-eq-formula
+    status: internal
+    note: 'Fidelity: G nu t x equals 1/sqrt(2 pi nu t) exp(-x^2/(2 nu t)) under Lean''s conventions (sqrt
+      of a negative number is 0, 1/0 = 0) for all real nu, t, x (G_eq_formula, by definition); for nu
+      > 0, t <= 0 it is 0, the paper''s convention G = 0.'
+  - source: null
+    lean: ChenDalang15.integral_rpow_mul_sub_rpow
+    module: ChenDalang15/Beta.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-rpow-mul-sub-rpow
+    status: internal
+    note: 'Real Beta integral on [0,t]: for a, b, t > 0, the integral of s^(a-1) (t-s)^(b-1) over [0,t]
+      is t^(a+b-1) Gamma(a) Gamma(b) / Gamma(a+b) (paper E2:BetaInt).'
+  - source: null
+    lean: ChenDalang15.L_eq
+    module: ChenDalang15/Resolvent.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l-eq
+    status: internal
+    note: 'Paper P2:K, E:KS-LB: for nu > 0, t > 0, L_n(t,x) = G_{nu/2}(t,x) (b sqrt pi)^(n+1) / Gamma((n+1)/2)
+      t^((n-1)/2), b = lam^2/sqrt(4 pi nu), with L_0 = lam^2 G_nu^2 and L_{n+1} = L_n * L_0.'
+  - source: null
+    lean: ChenDalang15.L_eq_L_zero_mul_BCoeff
+    module: ChenDalang15/Summability.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l-eq-l-zero-mul-bcoeff
+    status: internal
+    note: 'Paper P2:K, E:KS-LB second form: L_n(t,x) = L_0(t,x) B_n(t) for nu > 0, t > 0.'
+  - source: null
+    lean: ChenDalang15.summable_BCoeff_rpow
+    module: ChenDalang15/Summability.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/summable-bcoeff-rpow
+    status: internal
+    note: 'Paper P2:K: for b, t >= 0 and every integer m >= 1, the series of B_n(t)^(1/m) converges.'
+  - source: null
+    lean: ChenDalang15.Phi_eq_erf
+    module: ChenDalang15/ErfSeries.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/phi-eq-erf
+    status: internal
+    note: Phi(x) = (1 + Erf(x/sqrt 2))/2 for the paper's definitions of Phi and Erf.
+  - source: null
+    lean: ChenDalang15.hasSum_pow_div_Gamma
+    module: ChenDalang15/ErfSeries.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/has-sum-pow-div-gamma
+    status: internal
+    note: For z >= 0, the sum over k of z^k / Gamma(k/2 + 1) equals exp(z^2) (1 + Erf z) (DLMF 7.6.2,
+      used in P2:K).
+  - source: null
+    lean: ChenDalang15.integral_exp_mul_Phi
+    module: ChenDalang15/PhiE.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-exp-mul-phi
+    status: internal
+    note: 'Paper LA:Phi-E for b > 0: pi times the integral over [0,t] of exp(pi b^2 u) Phi(sqrt(2 pi b^2
+      u)) equals exp(pi b^2 t) Phi(sqrt(2 pi b^2 t))/b^2 - 1/(2 b^2) - sqrt(t)/b.'
+  - source: null
+    lean: ChenDalang15.integral_exp_mul_Phi_false_of_neg
+    module: ChenDalang15/PhiE.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-exp-mul-phi-false-of-neg
+    status: internal
+    note: 'No-go: the identity of LA:Phi-E fails at b = -1, t = 1, so the paper''s hypothesis b != 0 must
+      be b > 0 (ERRATA E1).'
+  - source: null
+    lean: ChenDalang15.hasSum_L
+    module: ChenDalang15/KClosed.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/has-sum-l
+    status: internal
+    note: 'Paper P2:K, E:K with convergence: for nu > 0, t > 0 the series of L_n(t,x) converges to G_{nu/2}(t,x)
+      (lam^2/sqrt(4 pi nu t) + lam^4/(2 nu) exp(lam^4 t/(4 nu)) Phi(lam^2 sqrt(t/(2 nu)))).'
+  - source: null
+    lean: ChenDalang15.K_eq
+    module: ChenDalang15/KClosed.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/k-eq
+    status: internal
+    note: 'Paper P2:K, display E:K: closed form of K(t,x) = sum of L_n(t,x) for nu > 0, t > 0.'
+  - source: null
+    lean: ChenDalang15.K_conv_L_zero
+    module: ChenDalang15/KConv.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/k-conv-l-zero
+    status: internal
+    note: 'Paper P2:K, display E:KS-Kn-K0: (K * L_0)(t,x) = K(t,x) - L_0(t,x) for nu > 0, t > 0, with
+      * the space-time convolution.'
+  - source: null
+    lean: ChenDalang15.one_conv_K
+    module: ChenDalang15/H.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/one-conv-k
+    status: internal
+    note: 'Paper display E2:H: for nu > 0, t >= 0 and every x, H(t) = (1 * K)(t,x) = 2 exp(lam^4 t/(4
+      nu)) Phi(lam^2 sqrt(t/(2 nu))) - 1, with * the space-time convolution.'
+  - source: null
+    lean: ChenDalang2015.P2K_L_closed_form
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-p2k-l-closed-form
+    status: reusable
+    note: 'Palomar Challenge statement of P2:K, E:KS-LB: closed form of L_n(t,x) for nu > 0, t > 0, with
+      b = lam^2/sqrt(4 pi nu) inlined.'
+  - source: null
+    lean: ChenDalang2015.P2K_hasSum
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-p2k-has-sum
+    status: reusable
+    note: 'Palomar Challenge statement of P2:K, E:K with convergence: the series of L_n(t,x) converges
+      to the closed form of K(t,x).'
+  - source: null
+    lean: ChenDalang2015.P2K_K_closed_form
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-p2k-k-closed-form
+    status: reusable
+    note: 'Palomar Challenge statement of P2:K, display E:K: closed form of K(t,x).'
+  - source: null
+    lean: ChenDalang2015.P2K_resolvent
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-p2k-resolvent
+    status: reusable
+    note: 'Palomar Challenge statement of P2:K, display E:KS-Kn-K0: (K * L_0)(t,x) = K(t,x) - L_0(t,x).'
+  - source: null
+    lean: ChenDalang2015.P2K_summable
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-p2k-summable
+    status: reusable
+    note: 'Palomar Challenge statement of the P2:K summability claim: the series of B_n(t)^(1/m) converges
+      for t >= 0, m >= 1, with B_n inlined.'
+  - source: null
+    lean: ChenDalang2015.E2H_closed_form
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-e2h-closed-form
+    status: reusable
+    note: 'Palomar Challenge statement of display E2:H: (1 * K)(t,x) = 2 exp(lam^4 t/(4 nu)) Phi(lam^2
+      sqrt(t/(2 nu))) - 1.'
+  - source: null
+    lean: ChenDalang2015.LA_Phi_E
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-la-phi-e
+    status: reusable
+    note: Palomar Challenge statement of Lemma LA:Phi-E for b > 0.
+  - source: null
+    lean: ChenDalang2015.LA_Phi_E_false_at_neg_one
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-la-phi-e-false-at-neg-one
+    status: reusable
+    note: 'Palomar Challenge statement: the identity of LA:Phi-E fails at b = -1, t = 1 (erratum E1).'
+  - source: null
+    lean: ChenDalang15.integral_G_mul_G_time
+    module: ChenDalang15/IntGG.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-g-mul-g-time
+    status: internal
+    note: 'Paper L2:IntGG (Lemma A.10): for nu, sigma, t > 0 and all x, y, int_0^t G_nu(r,x) G_sigma(t-r,y)
+      dr = Erfc((|x|/sqrt nu + |y|/sqrt sigma)/sqrt(2t)) / (2 sqrt(nu sigma)).'
+  - source: null
+    lean: ChenDalang15.integral_G_div_sqrt
+    module: ChenDalang15/IntGG.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-g-div-sqrt
+    status: internal
+    note: 'Paper L2:IntGG, case x = 0: for nu, sigma, t > 0, int_0^t G_sigma(t-r,y)/sqrt(2 pi nu r) dr
+      = Erfc(|y|/sqrt(2 sigma t)) / (2 sqrt(nu sigma)).'
+  - source: null
+    lean: ChenDalang15.integral_G_div_sqrt_le
+    module: ChenDalang15/IntGG.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-g-div-sqrt-le
+    status: internal
+    note: 'Paper L2:IntGG, bound: for nu, sigma, t > 0, Erfc(|y|/sqrt(2 sigma t)) / (2 sqrt(nu sigma))
+      <= sqrt(pi t)/sqrt(2 nu) G_sigma(t,y) (from Erfc z <= exp(-z^2), z >= 0).'
+  - source: null
+    lean: ChenDalang15.integral_G_time
+    module: ChenDalang15/IntGG.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-g-time
+    status: internal
+    note: 'Paper L:IntIntGG (Lemma A.9), first identity: for nu > 0, 0 < t <= tau, int_t^tau G_nu(r,x)
+      dr = (2|x|/nu)(Phi(|x|/sqrt(nu tau)) - Phi(|x|/sqrt(nu t))) + 2 tau G_nu(tau,x) - 2 t G_nu(t,x).'
+  - source: null
+    lean: ChenDalang15.integral_integral_G_mul_G
+    module: ChenDalang15/IntGG.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-integral-g-mul-g
+    status: internal
+    note: 'Paper L:IntIntGG, second identity for 0 < t < tau: int_0^t int_R G_nu(t-r,x-z) G_nu(tau-r,y-z)
+      dz dr in closed form via Phi and G_nu at tau+t and tau-t.'
+  - source: null
+    lean: ChenDalang15.integral_integral_G_mul_G_diag
+    module: ChenDalang15/IntGG.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-integral-g-mul-g-diag
+    status: internal
+    note: 'Paper L:IntIntGG, second identity at tau = t > 0 (paper''s convention Phi(|x-y|/0) = 1): the
+      overlap integral equals (|x-y|/nu)(Phi(|x-y|/sqrt(2 nu t)) - 1) + 2t G_nu(2t,x-y).'
+  - source: null
+    lean: ChenDalang15.integral_H_add_one_mul_G
+    module: ChenDalang15/IntHG.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-h-add-one-mul-g
+    status: internal
+    note: 'Paper L2:IntHG (Lemma A.6) with H+1 = 2 exp(lam^4 r/(4nu)) Phi(lam^2 sqrt(r/(2nu))): for nu,
+      t > 0, lam != 0, int_0^t (H(r)+1) G_{2nu}(t-r,x) dr equals the paper''s Erfc closed form.'
+  - source: null
+    lean: ChenDalang15.integral_one_conv_K_add_one_mul_G
+    module: ChenDalang15/IntHG.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-one-conv-k-add-one-mul-g
+    status: internal
+    note: 'Paper L2:IntHG stated with H = 1 * K itself (via E2:H): for nu, t > 0, lam != 0, int_0^t ((1*K)(r,x)
+      + 1) G_{2nu}(t-r,x) dr equals the paper''s Erfc closed form.'
+  - source: null
+    lean: ChenDalang15.L2_IntHG_BC
+    module: ChenDalang15/IntBC.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-inthg-bc
+    status: internal
+    note: 'Paper L2:IntHG-BC (Lemma A.7), Bertini-Cancrini''s integral in closed form: for nu, t > 0 and
+      x != 0 the r-integral equals exp((t-2|x|)/(4nu)) Erfc((|x|-t)/sqrt(4 nu t)). The paper states t
+      >= 0; t = 0 holds only as a limit.'
+  - source: null
+    lean: ChenDalang15.L2_IntHG_BC_t_zero_junk
+    module: ChenDalang15/IntBC.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-inthg-bc-t-zero-junk
+    status: internal
+    note: 'Lean junk-value convention note, no mathematical content about the paper: Lean reads Erfc(|x|/sqrt
+      0) as erfc 0 = 1 (x/0 = 0 in Lean), so the literal t = 0 instance of the L2:IntHG-BC display is
+      false in Lean (left side 0).'
+  - source: null
+    lean: ChenDalang15.L2_TP_Delta_BC
+    module: ChenDalang15/IntBC.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-tp-delta-bc
+    status: internal
+    note: 'Paper L2:TP-Delta-BC (Lemma A.8) for x != y: Bertini-Cancrini''s two-point integral (2.32)
+      equals G_nu(t,x)G_nu(t,y) + G_{nu/2}(t,(x+y)/2) exp((t-2|x-y|)/(4nu)) Erfc((|x-y|-t)/sqrt(4nu t))/(4nu),
+      nu, t > 0.'
+  - source: null
+    lean: ChenDalang15.L2_TP_Delta_BC_false_of_eq
+    module: ChenDalang15/IntBC.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-tp-delta-bc-false-of-eq
+    status: internal
+    note: 'No-go: L2:TP-Delta-BC fails at x = y for every nu, t > 0 (the integral (2.32) has the factor
+      |x-y| and vanishes, the closed form is positive), so the lemma needs x != y (ERRATA E2).'
+  - source: null
+    lean: ChenDalang15.T2_Growth_lower
+    module: ChenDalang15/GrowthTheorem.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/t2-growth-lower
+    status: internal
+    note: 'Paper T2:Growth(1) (Thm 2.12), vip = 0, p = 2, CONDITIONAL: for a nonnegative measure mu !=
+      0 in M_{H,+}, nu > 0, l != 0, assuming the moment inequality (J0^2 * K_l)(t,x) <= g(t,x) for all
+      t > 0 (from E2:SecMom-Lower, T2:ExUni(4)), lowerGrowthIndex g >= l^2/2.'
+  - source: null
+    lean: ChenDalang15.T2_Growth_lower_top
+    module: ChenDalang15/GrowthTheorem.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/t2-growth-lower-top
+    status: internal
+    note: 'Paper T2:Growth(1) (Thm 2.12), vip != 0, p = 2, CONDITIONAL: for nu > 0, l != 0, v != 0, assuming
+      the moment inequality v^2 H_l(t) <= g(t,x) for all t > 0, x (from E2:SecMom-Lower, T2:ExUni(4)),
+      both growth indices of g are +infinity.'
+  - source: null
+    lean: ChenDalang15.T2_Growth_upper
+    module: ChenDalang15/GrowthTheorem.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/t2-growth-upper
+    status: internal
+    note: 'Paper T2:Growth(2) (Thm 2.12), p = 2, CONDITIONAL: nonnegative mu with int e^{beta|y|} mu(dy)
+      < oo, beta, nu > 0, Lip != 0, assuming g <= J0^2 + J0^2 * K_Lip for t > 0 (E2:SecMom-Up, p = 2,
+      Vip = 0, T2:ExUni(3)): upper index <= beta nu/2 + Lip^4/(8 nu beta) if beta < Lip^2/(2nu), else
+      Lip^2/2.'
+  - source: null
+    lean: ChenDalang15.L2_Growth
+    module: ChenDalang15/GrowthIndex.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-growth
+    status: internal
+    note: 'Paper L2:Growth (Lemma 4.1, Conus-Khoshnevisan): for a random field X with a.e.-measurable
+      values under a probability measure and 0 < a <= b, both exponential growth indices of E|X(t,x)|^p
+      are nondecreasing from p = a to p = b (paper: 2 <= a).'
+  - source: null
+    lean: ChenDalang15.L2_pLbd
+    module: ChenDalang15/GrowthLower.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-plbd
+    status: internal
+    note: 'Paper L2:pLbd (Lemma 4.2): for a nonnegative measure mu != 0 with int exp(-a y^2) mu(dy) <
+      oo for all a > 0, and eps > 0, 0 < xi < nu, there is a > 0 with a G_xi(t,x) <= J0(t,x) for all t
+      >= eps and all x.'
+  - source: null
+    lean: ChenDalang15.L2_MaxGGE
+    module: ChenDalang15/GrowthUpper.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-maxgge
+    status: internal
+    note: 'Paper L2:MaxGGE (Lemma 4.3, E2:Hxbts): for nu, t, s, beta > 0 and all x, z1, z2, G_{2nu}(s,z2-z1)
+      G_{nu/2}(t,x-(z1+z2)/2) exp(-beta|z1|-beta|z2|) <= (2 pi nu sqrt(ts))^(-1) exp(-2beta|x| + nu beta^2
+      t).'
+  - source: null
+    lean: ChenDalang15.L2_InDt_G_J0
+    module: ChenDalang15/GrowthUpper.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-indt-g-j0
+    status: internal
+    note: 'Paper L2:InDt-G (Lemma 4.4, E2:J0Bd-G): for a nonnegative measure mu with C = int e^{beta|y|}
+      mu(dy) < oo and nu, beta, t > 0, J0(t,x)^2 <= C^2/(2 pi nu t) exp(-2beta|x| + nu beta^2 t) for every
+      x.'
+  - source: null
+    lean: ChenDalang15.L2_InDt_G_conv
+    module: ChenDalang15/GrowthUpper.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-indt-g-conv
+    status: internal
+    note: 'Paper L2:InDt-G (Lemma 4.4), convolution bound: nonnegative mu, C = int e^{beta|y|} dmu < oo,
+      nu, beta, t > 0, h >= 0 with s -> h(t-s)/sqrt s integrable on [0,t]: (J0^2 * G_{nu/2} h)(t,x) <=
+      C^2/(2 pi nu sqrt t) e^{-2beta|x|+nu beta^2 t} int_0^t h(t-s)/sqrt s ds.'
+  - source: null
+    lean: ChenDalang15.upperGrowthIndex_le_piecewise
+    module: ChenDalang15/GrowthIndex.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/upper-growth-index-le-piecewise
+    status: internal
+    note: 'Optimisation step of T2:Growth(2): if for every beta in (0, beta0] f(t,x) <= A e^{(nu beta^2
+      + L^4/(4nu))t - 2beta|x|} for large t (nu, L, beta0 > 0), then the upper growth index of f is <=
+      beta0 nu/2 + L^4/(8 nu beta0) if beta0 < L^2/(2nu), else <= L^2/2.'
+  - source: null
+    lean: ChenDalang15.exExp_lowerIndex_of_envelope
+    module: ChenDalang15/ExExpLower.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/ex-exp-lower-index-of-envelope
+    status: internal
+    note: 'P2:Ex-Exp lower bound, CONDITIONAL on the minorant of its proof: if f(t,x) >= E_{nu t/2,-2beta}(x)
+      e^{beta^2 nu t} Phi(-beta sqrt(nu(1-c)t))^2 (e^{gt} - e^{cgt}), g = lam^4/(4nu), for each c in [0,1)
+      and large t, then lower index >= the piecewise value of E2:Ex-Exp.'
+  - source: null
+    lean: ChenDalang15.exExp_growth_eq
+    module: ChenDalang15/ExExpLower.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/ex-exp-growth-eq
+    status: internal
+    note: 'Paper P2:Ex-Exp (Prop 2.14), CONDITIONAL: nu, beta > 0, lam != 0; assuming the proof''s minorant
+      of f = E u^2 (from E2:SecMom) and the T2:Growth(2) envelopes f <= A e^{(nu b^2 + lam^4/(4nu))t -
+      2b|x|} for each b in (0,beta), both indices equal display E2:Ex-Exp.'
+  - source: null
+    lean: ChenDalang15.C2_SecMom_Lebesgue
+    module: ChenDalang15/TPLebesgue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/c2-secmom-lebesgue
+    status: internal
+    note: 'Paper C2:TP-Lebesgue (Cor 2.5), display (2.28), deterministic part: with J0 = 1 and nu > 0,
+      the E2:SecMom expression J0^2 + J0^2 * K + v^2 H equals 1 + (1 + v^2) H(t) for t > 0. Equals E|u|^2
+      only given T2:ExUni(5) (not formalized).'
+  - source: null
+    lean: ChenDalang15.C2_TP_Lebesgue_integral
+    module: ChenDalang15/TPLebesgue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/c2-tp-lebesgue-integral
+    status: internal
+    note: 'Paper C2:TP-Lebesgue (Cor 2.5), correct integral form: J0 = 1, nu > 0, tau >= t > 0: 1 + I(t,x,tau,y)
+      (rd1) = 1 + lam^2 (1+v^2) int_0^t (H(r)+1) G_{2nu}((t+tau)/2 - r, x-y) dr. Deterministic; E[u u]
+      needs T2:ExUni(5).'
+  - source: null
+    lean: ChenDalang15.C2_TP_Lebesgue_diag
+    module: ChenDalang15/TPLebesgue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/c2-tp-lebesgue-diag
+    status: internal
+    note: 'Paper Cor 2.5, (2.27) at tau = t, deterministic part: J0 = 1, nu > 0, lam != 0, t > 0: 1 +
+      I(t,x,t,y) equals the printed exp-Erfc closed form with tbar = t. lam != 0 assumed; lam = 0 is trivial
+      (both sides 1) and not stated. Equals E[u(t,x)u(t,y)] only given T2:ExUni(5).'
+  - source: null
+    lean: ChenDalang15.C2_TP_Lebesgue_false
+    module: ChenDalang15/TPLebesgue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/c2-tp-lebesgue-false
+    status: internal
+    note: 'No-go: display (2.27) of C2:TP-Lebesgue as printed (all tau >= t > 0) is false for the two-point
+      expression 1 + I (J0 = 1) for every nu > 0, lam != 0, v; it fails at t = 1, tau = 2, x = y = 0 (ERRATA
+      E3).'
+  - source: null
+    lean: ChenDalang15.C2_SecMom_Delta
+    module: ChenDalang15/TPDelta.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/c2-secmom-delta
+    status: internal
+    note: 'Paper C2:TP-Delta (Cor 2.8), E2:SecMom-Delta, deterministic part: for J0 = G_nu (delta data),
+      nu > 0, lam != 0, every v, t > 0, x: G^2 + G^2 * K + v^2 H = K(t,x)/lam^2 + v^2 H(t). Equals E|u|^2
+      only given T2:ExUni(5).'
+  - source: null
+    lean: ChenDalang15.C2_TP_Delta
+    module: ChenDalang15/TPDelta.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/c2-tp-delta
+    status: internal
+    note: 'Paper Cor 2.8, (2.30) E2:TP-Delta, deterministic part: J0 = G_nu, nu > 0, lam != 0, t > 0:
+      G(t,x)G(t,y) + I(t,x,t,y) equals the printed erfc closed form. lam != 0 assumed; lam = 0 is trivial
+      (both sides G G) and not stated. Equals E[u(t,x)u(t,y)] only given T2:ExUni(5).'
+  - source: null
+    lean: ChenDalang15.integral_exp_mul_abs_mul_G
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-exp-mul-abs-mul-g
+    status: internal
+    note: 'Paper P2:E(ii) (Prop A.11): for nu, t > 0 and all beta, x, the integral of e^{beta|y|} G_nu(t,
+      x-y) dy equals e^{beta^2 nu t/2} E_{nu t, beta}(x).'
+  - source: null
+    lean: ChenDalang15.strictConvexOn_Eac
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/strict-convex-on-eac
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta > 0: for a > 0, x -> E_{a,beta}(x) is strictly convex on R.'
+  - source: null
+    lean: ChenDalang15.Eac_le_exp_neg_abs
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-le-exp-neg-abs
+    status: internal
+    note: 'Paper P2:E(iv) (Prop A.11), beta < 0, upper bound: for a > 0, beta < 0 and every x, E_{a,beta}(x)
+      <= exp(-|beta x|).'
+  - source: null
+    lean: ChenDalang15.logRel_sInf
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/log-rel-s-inf
+    status: internal
+    note: 'Paper L2:LogRel (Lemma A.2), corrected infimum: for 0 < a < b, the infimum over s in [0,a)
+      of (a-s)(b-s) log((b-s)/(a-s)) is 0 (the paper prints (b-a) log(b-a), ERRATA E4).'
+  - source: null
+    lean: ChenDalang15.logRel_inf_claim_false
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/log-rel-inf-claim-false
+    status: internal
+    note: 'No-go: the printed claim of L2:LogRel that inf over [0,a) of (a-s)(b-s) log((b-s)/(a-s)) equals
+      (b-a) log(b-a) for all 0 < a < b is false (a = 1, b = 3: infimum 0 versus 2 log 2) (ERRATA E4).'
+  - source: null
+    lean: ChenDalang15.logRel_isGreatest
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/log-rel-is-greatest
+    status: internal
+    note: 'Paper L2:LogRel (Lemma A.2), supremum: for 0 < a < b, f(s) = (a-s)(b-s) log((b-s)/(a-s)) attains
+      its maximum on [0,a) at s = 0, sup = ab log(b/a) (the only part used, in P2:G-Margin).'
+  - source: null
+    lean: ChenDalang15.J0_exp_measure
+    module: ChenDalang15/ExExpEnvelope.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/j0-exp-measure
+    status: internal
+    note: 'For mu(dx) = e^(-beta|x|)dx and nu, t > 0: J0(t,x) = e^(beta^2 nu t/2) E_(nu t,-beta)(x) (Prop
+      A.11(ii) with -beta), the heat flow of the initial data of Prop 2.14.'
+  - source: null
+    lean: ChenDalang15.exExp_envelope_of_secondMoment
+    module: ChenDalang15/ExExpEnvelope.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/ex-exp-envelope-of-second-moment
+    status: internal
+    note: 'Prop 2.14''s lower envelope, derived: nu, beta > 0, mu = e^(-beta|x|)dx; if f >= J0^2 + J0^2
+      * K (E2:SecMom, theta = 0) for all t > 0, x, then for each c in [0,1), for all sufficiently large
+      t: f >= E_(nu t/2,-2beta) e^(beta^2 nu t) Phi^2 (e^(gamma t) - e^(c gamma t)).'
+  - source: null
+    lean: ChenDalang15.P2_Ex_Exp_lower
+    module: ChenDalang15/ExExpEnvelope.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/p2-ex-exp-lower
+    status: internal
+    note: 'Paper Prop 2.14 lower bound, CONDITIONAL only on the inequality f >= J0^2 + J0^2 * K (E2:SecMom,
+      theta = 0) for mu = e^(-beta|x|)dx: lower growth index of f >= beta nu/2 + lam^4/(8 nu beta) if
+      beta <= lam^2/(2nu), else lam^2/2.'
+  - source: null
+    lean: ChenDalang15.P2_Ex_Exp
+    module: ChenDalang15/ExExpEnvelope.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/p2-ex-exp
+    status: internal
+    note: 'Paper Prop 2.14 (P2:Ex-Exp), CONDITIONAL only on the second-moment formula f = J0^2 + J0^2
+      * K of T2:ExUni(5) (theta = 0) for mu = e^(-beta|x|)dx, beta, nu > 0, lam != 0: lower = upper growth
+      index = display (2.33).'
+  - source: null
+    lean: ChenDalang15.L2_MaxGGE_cases
+    module: ChenDalang15/GrowthUpper.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-maxgge-cases
+    status: internal
+    note: 'Paper L2:MaxGGE (Lemma 4.3), two-case bound: for nu, t, s, beta > 0 and all x, z1, z2, G_{2nu}(s,z2-z1)
+      G_{nu/2}(t,x-(z1+z2)/2) e^{-beta|z1|-beta|z2|} <= (2 pi nu sqrt(ts))^(-1) times e^{-x^2/(nu t)}
+      if |x| <= nu beta t, else e^{-2beta|x| + nu beta^2 t}.'
+  - source: null
+    lean: ChenDalang15.G_sq
+    module: ChenDalang15/Resolvent.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/g-sq
+    status: internal
+    note: 'Paper L2:GG (Lemma A.4), first identity: for nu, t > 0 and every x, G_nu(t,x)^2 = G_{nu/2}(t,x)
+      (4 pi nu)^(-1/2) t^(-1/2), i.e. (4 pi nu t)^(-1/2) G_{nu/2}(t,x).'
+  - source: null
+    lean: ChenDalang15.one_div_le_log_div_div_sub
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/one-div-le-log-div-div-sub
+    status: internal
+    note: 'Paper L2:LogRel (Lemma A.2), display E2:log: for 0 < a < b, 1/b <= log(b/a)/(b-a).'
+  - source: null
+    lean: ChenDalang15.logRel_antitoneOn
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/log-rel-antitone-on
+    status: internal
+    note: 'Paper L2:LogRel (Lemma A.2), monotonicity: for 0 < a < b, f(s) = (a-s)(b-s) log((b-s)/(a-s))
+      is nonincreasing on [0,a).'
+  - source: null
+    lean: ChenDalang15.logRel_tendsto
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/log-rel-tendsto
+    status: internal
+    note: 'Paper L2:LogRel (Lemma A.2), corrected limit: for a < b, (a-s)(b-s) log((b-s)/(a-s)) tends
+      to 0 as s -> a from below (the paper prints (b-a) log(b-a), ERRATA E4).'
+  - source: null
+    lean: ChenDalang15.Eac_zero_beta
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-zero-beta
+    status: internal
+    note: 'Paper P2:E(i) (Prop A.11): E_{a,0}(x) = 1 for all real a and x (the paper has a > 0).'
+  - source: null
+    lean: ChenDalang15.integrable_exp_mul_abs_mul_G
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integrable-exp-mul-abs-mul-g
+    status: internal
+    note: 'Paper P2:E(ii) (Prop A.11), integrability: for nu, t > 0 and all beta, x, y -> e^{beta|y|}
+      G_nu(t, x-y) is integrable on R.'
+  - source: null
+    lean: ChenDalang15.Eac_hasDerivAt
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-has-deriv-at
+    status: internal
+    note: 'Paper P2:E(iii) (Prop A.11), first derivative: for a > 0 and all beta, x, E''_{a,beta}(x) =
+      -beta e^{-beta x} Phi((a beta - x)/sqrt a) + beta e^{beta x} Phi((a beta + x)/sqrt a).'
+  - source: null
+    lean: ChenDalang15.Eac_hasDerivAt_deriv
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-has-deriv-at-deriv
+    status: internal
+    note: 'Paper P2:E(iii) (Prop A.11), second derivative: for a > 0 and all beta, x, the expression of
+      E'' has derivative beta sqrt(2/(pi a)) e^{-(a^2 beta^2 + x^2)/(2a)} + beta^2 E_{a,beta}(x).'
+  - source: null
+    lean: ChenDalang15.exp_mul_abs_le_Eac
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/exp-mul-abs-le-eac
+    status: internal
+    note: 'Paper P2:E(iv) (Prop A.11), beta > 0, lower bound: for a > 0, beta > 0 and every x, e^{beta|x|}
+      <= E_{a,beta}(x).'
+  - source: null
+    lean: ChenDalang15.Eac_lt_exp_add_exp
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-lt-exp-add-exp
+    status: internal
+    note: 'Paper P2:E(iv) (Prop A.11), upper bound: for all real a, beta, x, E_{a,beta}(x) < e^{beta x}
+      + e^{-beta x} (the paper states it for a > 0, beta > 0).'
+  - source: null
+    lean: ChenDalang15.Phi_mul_sqrt_Eac_two_mul_le_Eac
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/phi-mul-sqrt-eac-two-mul-le-eac
+    status: internal
+    note: 'Paper P2:E(iv) (Prop A.11), beta < 0, lower bound: for a > 0, beta < 0 and every x, Phi(sqrt(a)
+      beta) E_{a,2beta}(x)^(1/2) <= E_{a,beta}(x).'
+  - source: null
+    lean: ChenDalang15.Eac_zero
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-zero
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11): E_{a,beta}(0) = 2 Phi(beta sqrt a) for all real a, beta.'
+  - source: null
+    lean: ChenDalang15.Eac_zero_le
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-zero-le
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta > 0: for a > 0 and every x, E_{a,beta}(0) <= E_{a,beta}(x).'
+  - source: null
+    lean: ChenDalang15.isLeast_Eac_zero
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/is-least-eac-zero
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta > 0: for a > 0, E_{a,beta}(0) is the least value of E_{a,beta}
+      on R (inf = E_{a,beta}(0), attained).'
+  - source: null
+    lean: ChenDalang15.one_lt_Eac_zero
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/one-lt-eac-zero
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta > 0: for a > 0, 1 < E_{a,beta}(0).'
+  - source: null
+    lean: ChenDalang15.antitoneOn_Eac_Ici
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/antitone-on-eac-ici
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta < 0: for a > 0, E_{a,beta} is nonincreasing (antitone) on [0,
+      oo); the paper says decreasing.'
+  - source: null
+    lean: ChenDalang15.monotoneOn_Eac_Iic
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/monotone-on-eac-iic
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta < 0: for a > 0, E_{a,beta} is nondecreasing (monotone) on (-oo,
+      0]; the paper says increasing.'
+  - source: null
+    lean: ChenDalang15.Eac_le_Eac_zero
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-le-eac-zero
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta < 0: for a > 0 and every x, E_{a,beta}(x) <= E_{a,beta}(0).'
+  - source: null
+    lean: ChenDalang15.isGreatest_Eac_zero
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/is-greatest-eac-zero
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta < 0: for a > 0, E_{a,beta}(0) is the greatest value of E_{a,beta}
+      on R (sup = E_{a,beta}(0), attained).'
+  - source: null
+    lean: ChenDalang15.Eac_zero_lt_one
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-zero-lt-one
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta < 0: for a > 0, E_{a,beta}(0) < 1.'
+  - source: null
+    lean: ChenDalang15.Eac_hasDerivAt_deriv_zero
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-has-deriv-at-deriv-zero
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), E''''(0): for a > 0 and all beta, the expression of E''_{a,beta}
+      has derivative beta sqrt(2/(pi a)) e^{-beta^2 a/2} + 2 beta^2 Phi(beta sqrt a) at x = 0.'
+  - source: null
+    lean: ChenDalang15.Eac_deriv2_zero_pos
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-deriv2-zero-pos
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta > 0: for a > 0, the expression beta sqrt(2/(pi a)) e^{-beta^2
+      a/2} + 2 beta^2 Phi(beta sqrt a) (= E''''(0) by Eac_hasDerivAt_deriv_zero) is positive.'
+  - source: null
+    lean: ChenDalang15.Eac_deriv2_zero_neg
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-deriv2-zero-neg
+    status: internal
+    note: 'Paper P2:E(v) (Prop A.11), beta < 0: for a > 0, the expression beta sqrt(2/(pi a)) e^{-beta^2
+      a/2} + 2 beta^2 Phi(beta sqrt a) (= E''''(0) by Eac_hasDerivAt_deriv_zero) is negative (strict;
+      the paper says <= 0).'
+  - source: null
+    lean: ChenDalang15.Eac_hasDerivAt_a
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eac-has-deriv-at-a
+    status: internal
+    note: 'Paper P2:E(vi) (Prop A.11): for a > 0 and all beta, x, the derivative of a -> E_{a,beta}(x)
+      is beta/sqrt(2 pi a) e^{-(a^2 beta^2 + x^2)/(2a)}.'
+  - source: null
+    lean: ChenDalang15.monotoneOn_Eac_a
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/monotone-on-eac-a
+    status: internal
+    note: 'Paper P2:E(vi) (Prop A.11): for beta >= 0 and every x, a -> E_{a,beta}(x) is nondecreasing
+      on (0, oo) (the paper has beta > 0).'
+  - source: null
+    lean: ChenDalang15.antitoneOn_Eac_a
+    module: ChenDalang15/EacProps.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/antitone-on-eac-a
+    status: internal
+    note: 'Paper P2:E(vi) (Prop A.11): for beta <= 0 and every x, a -> E_{a,beta}(x) is nonincreasing
+      on (0, oo) (the paper has beta < 0).'
+  - source: null
+    lean: ChenDalang15.MomentBridge.stConv_J0_sq_K_eq_lintegral
+    module: ChenDalang15/MomentBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/stconv-j0-sq-k-eq-lintegral
+    status: internal
+    note: 'Integrability bridge: for s-finite Gaussian-tempered mu, nu, t > 0, ofReal of the Bochner convolution
+      (J0^2 * K)(t,x) equals the iterated lower integral over s in (0,t], y in R of J0(s,y)^2 K(t-s,x-y);
+      no junk value.'
+  - source: null
+    lean: ChenDalang15.MomentBridge.lintegral_J0_sq_K_lt_top
+    module: ChenDalang15/MomentBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/lintegral-j0-sq-k-lt-top
+    status: internal
+    note: For s-finite Gaussian-tempered mu and nu, t > 0, the iterated lower integral of J0(s,y)^2 K(t-s,x-y)
+      over s in (0,t], y in R is finite.
+  - source: null
+    lean: ChenDalang15.MomentBridge.integrable_J0_sq_K
+    module: ChenDalang15/MomentBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integrable-j0-sq-k
+    status: internal
+    note: For s-finite Gaussian-tempered mu and nu, t > 0, (s,y) -> J0(s,y)^2 K(t-s,x-y) is integrable
+      on (0,t] x R, so the convolution (J0^2 * K)(t,x) is a genuine Lebesgue integral.
+  - source: null
+    lean: ChenDalang15.T2_Growth_upper_lintegral
+    module: ChenDalang15/MomentBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/t2-growth-upper-lintegral
+    status: internal
+    note: 'Paper Thm 2.12(2), p = 2, CONDITIONAL on E2:SecMom-Up stated with the genuine integral: g <=
+      ofReal(J0^2) + iterated lower integral of J0^2 K; mu >= 0 with int e^(beta|y|) dmu < oo, lam !=
+      0. Same piecewise upper bound as T2_Growth_upper.'
+  - source: null
+    lean: ChenDalang15.P2_Ex_Exp_lintegral
+    module: ChenDalang15/MomentBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/p2-ex-exp-lintegral
+    status: internal
+    note: 'Paper Prop 2.14, CONDITIONAL only on E2:SecMom (theta = 0) stated with the genuine integral:
+      f = ofReal(J0^2) + iterated lower integral of J0^2 K for mu = e^(-beta|x|)dx; both growth indices
+      equal display (2.33).'
+  - source: null
+    lean: ChenDalang15.L2_InDt_A
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-indt-a
+    status: internal
+    note: 'Paper Lemma 3.9 (L2:InDt), display (3.12) as a lower integral at general nu > 0: for every
+      s-finite mu >= 0, t > 0 and measurable h >= 0, int J0*(s,y)^2 G_(nu/2)(t-s,x-y) h(t-s) <= 2 sqrt
+      t J0*(2t,x)^2 int h(t-s)/sqrt s.'
+  - source: null
+    lean: ChenDalang15.L2_InDt_L0
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-indt-l0
+    status: internal
+    note: 'Paper Lemma 3.9, display (3.13): for s-finite mu >= 0, nu, t > 0, the lower integral of J0^2
+      * L_0 at (t,x) is at most lam^2 sqrt(pi t/nu) J0*(2t,x)^2.'
+  - source: null
+    lean: ChenDalang15.L2_InDt
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-indt
+    status: internal
+    note: 'Paper Lemma 3.9, K case: for s-finite mu >= 0, nu, t > 0 and every lam, the lower integral
+      of J0^2 * K at (t,x) is at most lam^2 sqrt(pi t/nu)(1 + 2 e^(lam^4 t/(4nu))) J0*(2t,x)^2.'
+  - source: null
+    lean: ChenDalang15.L2_InDt_lt_top
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-indt-lt-top
+    status: internal
+    note: For Gaussian-tempered s-finite mu >= 0 and nu, t > 0, the lower integral of J0^2 * K at (t,x)
+      is finite (paper Lemma 3.9 with J0*(2t,x) < oo).
+  - source: null
+    lean: ChenDalang15.L2_InDt_L0_lt_top
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-indt-l0-lt-top
+    status: internal
+    note: For Gaussian-tempered s-finite mu >= 0 and nu, t > 0, the lower integral of J0^2 * L_0 at (t,x)
+      is finite.
+  - source: null
+    lean: ChenDalang15.L2_InDt_tempered
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-indt-tempered
+    status: internal
+    note: 'Paper Lemma 3.9 for Gaussian-tempered mu >= 0: the lower integral of J0^2 * K at (t,x) is at
+      most ofReal(lam^2 sqrt(pi t/nu)(1 + 2 e^(lam^4 t/(4nu))) J0(2t,x)^2).'
+  - source: null
+    lean: ChenDalang15.L2_InDt_stConv
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/l2-indt-stconv
+    status: internal
+    note: 'Paper Lemma 3.9 for the real convolution: for Gaussian-tempered mu >= 0, (J0^2 * K)(t,x) <=
+      lam^2 sqrt(pi t/nu)(1 + 2 e^(lam^4 t/(4nu))) J0(2t,x)^2, nu, t > 0.'
+  - source: null
+    lean: ChenDalang15.S1Glue.integrable_exp_neg_sq_iff
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integrable-exp-neg-sq-iff
+    status: internal
+    note: 'Bridge: mu is Gaussian tempered in RoughHeatKernel''s lower-integral form iff y -> exp(-a y^2)
+      is mu-integrable for every a > 0 (the companion''s form of M_H,+).'
+  - source: null
+    lean: ChenDalang15.S1Glue.isGaussianTempered_of_integrable_exp
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/is-gaussian-tempered-of-integrable-exp
+    status: internal
+    note: 'Bridge: if beta >= 0 and int e^(beta|y|) dmu < oo, then mu is Gaussian tempered (the class
+      M_G^beta lies in M_H,+).'
+  - source: null
+    lean: ChenDalang15.T2_Growth_lower_all_p
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/t2-growth-lower-all-p
+    status: internal
+    note: 'Paper Thm 2.12(1), theta = 0, every p >= 2, CONDITIONAL: for a random field X on a probability
+      space with E|X|^2 >= ofReal(J0^2 * K_l) (E2:SecMom-Lower), mu >= 0 nonzero in M_H,+, l != 0: lower
+      index of E|X|^p >= l^2/2.'
+  - source: null
+    lean: ChenDalang15.T2_Growth_lower_top_all_p
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/t2-growth-lower-top-all-p
+    status: internal
+    note: 'Paper Thm 2.12(1), theta != 0, every p >= 2, CONDITIONAL on E|X|^2 >= ofReal(theta^2 (1 * K_l))
+      (E2:SecMom-Lower), l != 0: lower and upper growth indices of E|X|^p are both +infinity.'
+  - source: null
+    lean: ChenDalang15.T2_Growth_three
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/t2-growth-three
+    status: internal
+    note: 'Paper Thm 2.12(3), p = 2, theta = 0, CONDITIONAL on lower (Bochner) and upper (genuine integral)
+      second-moment bounds with lam != 0, beta >= lam^2/(2nu), mu >= 0 nonzero, int e^(beta|y|) dmu <
+      oo: both indices equal lam^2/2.'
+  - source: null
+    lean: ChenDalang15.T2_Growth_three_top
+    module: ChenDalang15/S1Glue.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/t2-growth-three-top
+    status: internal
+    note: 'Paper Thm 2.12(3), theta != 0, every p >= 2, CONDITIONAL on E|X|^2 >= ofReal(theta^2 (1 * K_lam)):
+      lower and upper growth indices of E|X|^p are both +infinity.'
+  - source: null
+    lean: ChenDalang15.lstConv_assoc
+    module: ChenDalang15/LConv.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/lstconv-assoc
+    status: internal
+    note: Associativity of the space-time lower-integral convolution lstConv on [0,oo]-valued functions
+      (jointly measurable), the algebra behind the renewal equation for moments.
+  - source: null
+    lean: ChenDalang15.ofReal_stConv_le_lstConv
+    module: ChenDalang15/LConv.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/ofreal-stconv-le-lstconv
+    status: internal
+    note: For nonnegative f, g and t >= 0, ofReal of the Bochner convolution stConv f g is at most the
+      lower-integral convolution lstConv, with no integrability hypothesis.
+  - source: null
+    lean: ChenDalang15.ofReal_stConv_eq_lstConv_of_integrable
+    module: ChenDalang15/LConv.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/ofreal-stconv-eq-lstconv-of-integrable
+    status: internal
+    note: For nonnegative f, g, t >= 0 and an integrable integrand on (0,t] x R, ofReal (stConv f g) equals
+      lstConv of ofReal f and ofReal g.
+  - source: null
+    lean: ChenDalang15.lstConv_ofReal_K_L_zero_add
+    module: ChenDalang15/LConv.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/lstconv-k-l-zero-add
+    status: internal
+    note: 'Resolvent identity in [0,oo]: lstConv K L_0 + L_0 = K (paper E:KS-Kn-K0, K * L_0 = K - L_0)
+      for nu > 0, every lam and every t, x.'
+  - source: null
+    lean: ChenDalang15.lstConv_ofReal_L_le_BCoeff_mul
+    module: ChenDalang15/LConv.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/lstconv-l-le-bcoeff-mul
+    status: internal
+    note: 'Remainder estimate: for any f >= 0, lstConv f L_n (t,x) <= B_n(t) lstConv f L_0 (t,x) (paper
+      E:KS-LB), nu > 0.'
+  - source: null
+    lean: ChenDalang15.Stoch.walshL2_isWalshIntegral
+    module: ChenDalang15/StochBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/walshl2-is-walsh-integral
+    status: internal
+    note: WalshIntegral's walshL2 satisfies the Mathlib-only characterisation IsWalshIntegral of the Walsh
+      integral used in the solution definition.
+  - source: null
+    lean: ChenDalang15.Stoch.isWalshIntegral_eq_walshL2
+    module: ChenDalang15/StochBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/is-walsh-integral-eq-walshl2
+    status: internal
+    note: Every continuous linear map satisfying IsWalshIntegral equals WalshIntegral's walshL2 (uniqueness
+      of the Walsh integral).
+  - source: null
+    lean: ChenDalang15.Stoch.exists_isWalshIntegral
+    module: ChenDalang15/StochBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/exists-is-walsh-integral
+    status: internal
+    note: 'For every white noise there is a Walsh integral J (IsWalshIntegral W J): the integral quantifier
+      in the solution headlines is satisfiable.'
+  - source: null
+    lean: ChenDalang15.Stoch.exists_augmentedWhiteNoise
+    module: ChenDalang15/StochBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/exists-augmented-white-noise
+    status: internal
+    note: 'There is a complete probability space with a space-time white noise and its augmented natural
+      filtration (IsAugmentedWhiteNoise): the paper''s setting is satisfiable.'
+  - source: null
+    lean: ChenDalang15.Stoch.rho_zero_headline
+    module: ChenDalang15/StochBridge.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/rho-zero-headline
+    status: internal
+    note: 'Degenerate headline at rho = 0 in the full form (exists J) and (for all J, exists solution
+      and every solution has E u^2 = J0^2): the solution predicate is satisfiable.'
+  - source: null
+    lean: ChenDalang15.Stoch.isRandomFieldSolution_rho_zero
+    module: ChenDalang15/StochDefs.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/is-random-field-solution-rho-zero
+    status: internal
+    note: 'Fixture: with rho = 0, u = J0 is a random field solution in the sense of D2:Solution for every
+      Walsh integral J (s-finite mu).'
+  - source: null
+    lean: ChenDalang15.Stoch.not_isRandomFieldSolution_notAdapted
+    module: ChenDalang15/StochDefs.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/not-solution-not-adapted
+    status: internal
+    note: 'Negative fixture: a null-set modification of 0 that satisfies clauses (2)-(4) but is not adapted
+      is rejected, so literal adaptedness in D2:Solution is load-bearing.'
+  - source: null
+    lean: ChenDalang15.Stoch.not_isRandomFieldSolution_J0_add_one
+    module: ChenDalang15/StochDefs.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/not-solution-j0-add-one
+    status: internal
+    note: 'Negative fixture: the adapted measurable field J0 + 1 is not a solution (the equation clause
+      is load-bearing).'
+  - source: null
+    lean: ChenDalang15.heatCausalKernel_K
+    module: ChenDalang15/HeatCausalKernel.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/heat-causal-kernel-k
+    status: internal
+    note: The heat CausalKernel at general nu > 0 (WalshIntegral structure) has kernel G_nu(t-s, x-y)
+      for 0 < s < t and 0 otherwise.
+  - source: null
+    lean: ChenDalang15.kernelVariance_heatCausalKernel
+    module: ChenDalang15/HeatCausalKernel.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/kernel-variance-heat
+    status: internal
+    note: 'Variance of the heat stochastic convolution: kernelVariance equals the lower integral of G_nu(t-s,x-y)^2
+      times E Phi(s,y)^2 (a.e.-strongly measurable Phi).'
+  - source: null
+    lean: ChenDalang15.kernelVariance_heatCausalKernel_det_iter
+    module: ChenDalang15/HeatCausalKernel.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/kernel-variance-heat-det-iter
+    status: internal
+    note: For a deterministic Borel weight sigma, the heat kernel variance equals the iterated integral
+      over s in (0,t), y of G_nu(t-s,x-y)^2 sigma(s,y)^2.
+  - source: null
+    lean: ChenDalang15.exists_predictable_modification_heat
+    module: ChenDalang15/HeatCausalKernel.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/exists-predictable-modification-heat
+    status: internal
+    note: WalshIntegral's predictable-modification theorem for the heat causal kernel at general nu >
+      0 (the Picard step of Wave S3).
+  - source: null
+    lean: ChenDalang15.Stoch.lintegral_sq_isWalshIntegral
+    module: ChenDalang15/ItoIdentity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/lintegral-sq-is-walsh-integral
+    status: internal
+    note: 'Ito isometry for any Walsh integral J: the lower integral of |J g|^2 under P equals the lower
+      integral of |g|^2 under the space-time sample measure.'
+  - source: null
+    lean: ChenDalang15.Stoch.lintegral_sq_integralField
+    module: ChenDalang15/ItoIdentity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/lintegral-sq-integral-field
+    status: internal
+    note: 'Completed Ito identity: for an integral field I of G_nu(t-.,x-.) rho(u), E I(t,x)^2 = int_0^t
+      int G_nu(t-s,x-y)^2 E rho(u(s,y))^2 dy ds, nu, t > 0.'
+  - source: null
+    lean: ChenDalang15.Stoch.integral_mul_integralField
+    module: ChenDalang15/ItoIdentity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/integral-mul-integral-field
+    status: internal
+    note: 'Polarized Ito identity: E[I(t,x) I(tau,y)] = int_(s>0) int G(t-s,x-z) G(tau-s,y-z) E rho(u(s,z))^2
+      dz ds for t, tau > 0.'
+  - source: null
+    lean: ChenDalang15.Stoch.walshMeanZero_of_isWalshIntegral
+    module: ChenDalang15/ItoIdentity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/walsh-mean-zero
+    status: internal
+    note: Every Walsh integral has mean zero (from WalshIntegral v0.8.0 integral_walshL2).
+  - source: null
+    lean: ChenDalang15.Stoch.momentFn_two_eq_renewal
+    module: ChenDalang15/ItoIdentity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/moment-fn-two-eq-renewal
+    status: internal
+    note: 'Renewal identity (paper E2:SecMom at p = 2) for every random field solution: E u(t,x)^2 = J0(t,x)^2
+      + lstConv (E rho(u)^2) (G_nu^2) (t,x), nu, t > 0; no hypothesis on u, rho or mu.'
+  - source: null
+    lean: ChenDalang15.MomentTheorems.renewal_lower
+    module: ChenDalang15/MomentTheorems.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/renewal-lower
+    status: internal
+    note: 'Deterministic lower bound: if a + (e + f) * L_0 <= f on (0,T], then a + (e + a) * K <= f there
+      (iteration and monotone limit; no finiteness).'
+  - source: null
+    lean: ChenDalang15.MomentTheorems.renewal_upper
+    module: ChenDalang15/MomentTheorems.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/renewal-upper
+    status: internal
+    note: 'Deterministic upper bound: if f <= a + (e + f) * L_0 on (0,T] and (e + f) * L_0 is finite at
+      (t,x), then f(t,x) <= a(t,x) + ((e + a) * K)(t,x).'
+  - source: null
+    lean: ChenDalang15.MomentTheorems.secondMoment_eq
+    module: ChenDalang15/MomentTheorems.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/second-moment-eq-deterministic
+    status: internal
+    note: 'Deterministic equality: if f = J0^2 + f * L_0(lam) and f * L_0 is finite, then f = J0^2 + J0^2
+      * K(lam), t > 0.'
+  - source: null
+    lean: ChenDalang15.MomentTheorems.eq_zero_of_le_lstConv_L_zero
+    module: ChenDalang15/MomentTheorems.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/eq-zero-of-le-lstconv-l-zero
+    status: internal
+    note: 'Uniqueness core: if w <= w * L_0 and w * L_0 is finite on (0,T] x R, then w = 0 there (iteration
+      with B_n(t) -> 0; avoids the paper''s unstated w * K < oo).'
+  - source: null
+    lean: ChenDalang15.Stoch.secondMoment_upper_of_solution
+    module: ChenDalang15/SolutionMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/second-moment-upper-of-solution
+    status: internal
+    note: 'Paper T2:ExUni(3) at p = 2 for every solution: if rho^2 <= Lip^2 (V^2 + z^2), rho measurable,
+      mu >= 0 s-finite Gaussian-tempered, then E u^2 <= J0^2 + (V^2 + J0^2) * K(Lip), t > 0.'
+  - source: null
+    lean: ChenDalang15.Stoch.secondMoment_lower_of_solution
+    module: ChenDalang15/SolutionMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/second-moment-lower-of-solution
+    status: internal
+    note: 'Paper T2:ExUni(4) at p = 2 for every solution: if rho^2 >= lip^2 (theta^2 + z^2), mu >= 0 s-finite
+      Gaussian-tempered, then E u^2 >= J0^2 + (theta^2 + J0^2) * K(lip), t > 0.'
+  - source: null
+    lean: ChenDalang15.Stoch.secondMoment_eq_of_solution
+    module: ChenDalang15/SolutionMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/second-moment-eq-of-solution
+    status: internal
+    note: 'Paper T2:ExUni(5) second moment (E2:SecMom) for every solution of the PAM rho(u) = lam u: E
+      u^2 = J0^2 + J0^2 * K(lam), t > 0, mu >= 0 s-finite Gaussian-tempered.'
+  - source: null
+    lean: ChenDalang15.Stoch.solution_unique
+    module: ChenDalang15/SolutionMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/solution-unique
+    status: internal
+    note: 'Paper T2:ExUni(1) uniqueness: two random field solutions with the same data and Lipschitz measurable
+      rho agree a.s. at every (t,x), t > 0 (mu >= 0 s-finite Gaussian-tempered).'
+  - source: null
+    lean: ChenDalang15.Stoch.upperGrowthIndex_le_of_solution
+    module: ChenDalang15/SolutionMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/upper-growth-index-of-solution
+    status: internal
+    note: 'Paper Thm 2.12(2), p = 2, for every solution (no moment hypothesis): rho^2 <= Lip^2 z^2, int
+      e^(beta|y|) dmu < oo: the upper growth index of E u^2 obeys the piecewise bound. Existence is Wave
+      S3.'
+  - source: null
+    lean: ChenDalang15.Stoch.lowerGrowthIndex_ge_of_solution
+    module: ChenDalang15/SolutionMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/lower-growth-index-of-solution
+    status: internal
+    note: 'Paper Thm 2.12(1), theta = 0, p = 2, for every solution (no moment hypothesis): rho^2 >= lip^2
+      z^2, mu != 0 in M_H,+: lower growth index of E u^2 >= lip^2/2. Existence is Wave S3.'
+  - source: null
+    lean: ChenDalang15.Stoch.P2_Ex_Exp_of_solution
+    module: ChenDalang15/SolutionMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/p2-ex-exp-of-solution
+    status: internal
+    note: 'Paper Prop 2.14 for every solution of the PAM with mu = e^(-beta|x|)dx (no moment hypothesis):
+      both growth indices of E u^2 equal display (2.33). Existence is Wave S3.'
+  - source: null
+    lean: ChenDalang15.Stoch.T2_Growth_three_of_solution
+    module: ChenDalang15/SolutionMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/t2-growth-three-of-solution
+    status: internal
+    note: 'Paper Thm 2.12(3), p = 2, for every solution of the PAM (no moment hypothesis): mu != 0, lam^2/(2nu)
+      <= beta, int e^(beta|y|) dmu < oo: both growth indices of E u^2 equal lam^2/2. Existence is Wave
+      S3.'
+  - source: null
+    lean: ChenDalang15.Stoch.secondMoment_eq_quasilinear_of_solution
+    module: ChenDalang15/SolutionMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/second-moment-eq-quasilinear-of-solution
+    status: internal
+    note: 'Paper T2:ExUni(5), E2:SecMom, for every existing solution with measurable rho and rho(z)^2
+      = lam^2 (theta^2 + z^2): E u^2 = J0^2 + (theta^2 + J0^2) * K(lam), t > 0, nonnegative s-finite Gaussian-tempered
+      mu. Existence and two-point formula remain open.'
+  - source: null
+    lean: ChenDalang15.NonAdaptedFixture.futureNoiseField_not_measurable
+    module: ChenDalang15/NonAdaptedFixture.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/future-noise-not-measurable
+    status: internal
+    note: 'Negative fixture: future unit-rectangle noise at t = 1 is not F(1)-measurable under the paper''s
+      augmented white-noise setting.'
+  - source: null
+    lean: ChenDalang15.NonAdaptedFixture.futureNoiseField_not_solution
+    module: ChenDalang15/NonAdaptedFixture.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/future-noise-not-solution
+    status: internal
+    note: 'Negative fixture: the actual future-noise field fails the adaptedness clause of IsRandomFieldSolution,
+      for every data and integral choice in the augmented setting. No claim about its other solution clauses.'
+  - source: null
+    lean: ChenDalang15.Stoch.PicardStep.momentFn_sub_eq
+    module: ChenDalang15/PicardDifferences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-picardstep-momentfn-sub-eq
+    status: internal
+    note: Difference Itô identity for distinct Picard inputs and outputs.
+  - source: null
+    lean: ChenDalang15.Stoch.PicardStep.momentFn_sub_le
+    module: ChenDalang15/PicardDifferences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-picardstep-momentfn-sub-le
+    status: internal
+    note: The Lipschitz recurrence for differences of two actual steps.
+  - source: null
+    lean: ChenDalang15.Stoch.PicardStep.momentFn_sub_J0_eq
+    module: ChenDalang15/PicardDifferences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-picardstep-momentfn-sub-j0-eq
+    status: internal
+    note: Subtracting `J₀` leaves exactly the step's stochastic integral.
+  - source: null
+    lean: ChenDalang15.Stoch.PicardStep.first_difference_le
+    module: ChenDalang15/PicardDifferences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-picardstep-first-difference-le
+    status: internal
+    note: The first difference is controlled by growth, without a Lipschitz assumption.
+  - source: null
+    lean: ChenDalang15.Picard.iterate_difference_le
+    module: ChenDalang15/PicardDifferences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-iterate-difference-le
+    status: internal
+    note: Iteration of the actual difference recurrence, manuscript Step 3.
+  - source: null
+    lean: ChenDalang15.Picard.iterate_difference_le_BCoeff
+    module: ChenDalang15/PicardDifferences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-iterate-difference-le-bcoeff
+    status: internal
+    note: The summable-coefficient bound for actual successive differences.
+  - source: null
+    lean: ChenDalang15.Picard.difference_base_lt_top
+    module: ChenDalang15/PicardDifferences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-difference-base-lt-top
+    status: internal
+    note: The base convolution in the difference bound is finite for rough Gaussian-tempered data. No
+      division by its value is used.
+  - source: null
+    lean: ChenDalang15.Picard.exists_predictable_solution₀
+    module: ChenDalang15/PicardExistence.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-exists-predictable-solution-zero
+    status: internal
+    note: Data-only existence of a predictable field satisfying every solution clause except L²-continuity
+      of the integral. Convergence, the moment bound and the fixed-point equation are all derived from
+      the data hypotheses.
+  - source: null
+    lean: ChenDalang15.Picard.exists_predictable_solution₀_of_separate_constants
+    module: ChenDalang15/PicardExistence.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-exists-predictable-solution-zero-of-separate-constants
+    status: internal
+    note: Separate growth and Lipschitz constants are dominated by one nonnegative constant. In particular
+      neither original constant nor the profile is divided by, so their zero cases are retained.
+  - source: null
+    lean: ChenDalang15.Picard.exists_predictable_step_with_bound
+    module: ChenDalang15/PicardIteration.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-exists-predictable-step-with-bound
+    status: internal
+    note: Construct one predictable Picard step and prove its moment bound, deriving all finite integration
+      domains from Gaussian tempering and the input bound.
+  - source: null
+    lean: ChenDalang15.Picard.exists_predictable_iterates
+    module: ChenDalang15/PicardIteration.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-exists-predictable-iterates
+    status: internal
+    note: Actual predictable iterates starting at J0, with genuine Picard-step relations and a proved
+      uniform second-moment bound. This theorem does not assert convergence.
+  - source: null
+    lean: ChenDalang15.Picard.limit_of_iterates
+    module: ChenDalang15/PicardLimit.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-limit-of-iterates
+    status: internal
+    note: The fixed full-sequence limit is predictable and is both the a.s. and L² limit at each positive-time
+      space point. Its moment bound is proved, not assumed. No simultaneous exceptional set over all time/space
+      points is asserted.
+  - source: null
+    lean: ChenDalang15.Picard.measurable_source
+    module: ChenDalang15/PicardMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-measurable-source
+    status: internal
+    note: The deterministic source is jointly measurable, including nonpositive times.
+  - source: null
+    lean: ChenDalang15.Picard.measurable_remainder
+    module: ChenDalang15/PicardMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-measurable-remainder
+    status: internal
+    note: The resolvent contribution is jointly measurable.
+  - source: null
+    lean: ChenDalang15.Picard.measurable_majorant
+    module: ChenDalang15/PicardMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-measurable-majorant
+    status: internal
+    note: The full candidate bound is jointly measurable.
+  - source: null
+    lean: ChenDalang15.Picard.source_lt_top
+    module: ChenDalang15/PicardMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-source-lt-top
+    status: internal
+    note: The source is finite as a real-valued expression. Gaussian tempering is needed below for the
+      convolution, not for this literal finiteness statement.
+  - source: null
+    lean: ChenDalang15.Picard.majorant_eq_secondMomentExpr
+    module: ChenDalang15/PicardMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-majorant-eq-secondmomentexpr
+    status: internal
+    note: The candidate majorant equals the paper's second-moment expression. The Gaussian-tempered integral
+      bridge ensures this is not Bochner totalization.
+  - source: null
+    lean: ChenDalang15.Picard.majorant_lt_top
+    module: ChenDalang15/PicardMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-majorant-lt-top
+    status: internal
+    note: The majorant is finite for Gaussian-tempered data at positive times.
+  - source: null
+    lean: ChenDalang15.Picard.remainder_lt_top
+    module: ChenDalang15/PicardMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-remainder-lt-top
+    status: internal
+    note: The resolvent contribution is finite for Gaussian-tempered data.
+  - source: null
+    lean: ChenDalang15.Picard.majorant_forward_invariant
+    module: ChenDalang15/PicardMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-majorant-forward-invariant
+    status: internal
+    note: The additive resolvent makes the explicit majorant forward invariant. This holds as an identity
+      of lower integrals at every time and needs no tempering or subtraction of potentially infinite quantities.
+  - source: null
+    lean: ChenDalang15.Stoch.PicardStep.momentFn_two_eq
+    module: ChenDalang15/PicardMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-picardstep-momentfn-two-eq
+    status: internal
+    note: The actual second moment of the output of a Picard step is the deterministic square plus the
+      convolution of the input coefficient's second moment with `G²`. No existence or continuity of a
+      fixed-point solution is assumed.
+  - source: null
+    lean: ChenDalang15.Stoch.PicardStep.momentFn_two_le
+    module: ChenDalang15/PicardMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-picardstep-momentfn-two-le
+    status: internal
+    note: Quadratic coefficient growth bounds the next iterate by convolution of the previous iterate's
+      moment. This estimate does not use a fixed-point solution.
+  - source: null
+    lean: ChenDalang15.Stoch.PicardStep.preserves_majorant
+    module: ChenDalang15/PicardMoments.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-picardstep-preserves-majorant
+    status: internal
+    note: The explicit deterministic majorant is preserved by an actual Picard step. The input bound is
+      an induction hypothesis, not a fixed-point assumption.
+  - source: null
+    lean: ChenDalang15.Picard.solution₀_of_predictable_fixed_step
+    module: ChenDalang15/PicardSolution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-solution-zero-of-predictable-fixed-step
+    status: internal
+    note: A predictable fixed Picard step satisfies all solution clauses except L²-continuity of the integral.
+      Its finite convolution is proved, not assumed.
+  - source: null
+    lean: ChenDalang15.Picard.kernelField_heat_ae
+    module: ChenDalang15/PicardStepConstruction.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-kernelfield-heat-ae
+    status: internal
+    note: On the positive-input-time product measure, the causal heat kernel gives the literal integrand
+      used in `IsIntegralField`. For `s ≥ t`, `G` is zero.
+  - source: null
+    lean: ChenDalang15.Picard.exists_predictable_step
+    module: ChenDalang15/PicardStepConstruction.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-exists-predictable-step
+    status: internal
+    note: Given a predictable input and finite weighted variances, construct a predictable next iterate
+      and all its actual predictable L² class witnesses.
+  - source: null
+    lean: ChenDalang15.Picard.measurable_momentFn_two
+    module: ChenDalang15/PicardStepStability.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-measurable-momentfn-two
+    status: internal
+    note: Global joint measurability gives joint measurability of the second moment.
+  - source: null
+    lean: ChenDalang15.Picard.lstConv_tendsto_zero_of_majorant
+    module: ChenDalang15/PicardStepStability.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-lstconv-tendsto-zero-of-majorant
+    status: internal
+    note: The majorant dominates a convolution limit without assuming convergence in a weighted norm.
+      The additive resolvent supplies its integrable envelope.
+  - source: null
+    lean: ChenDalang15.Picard.step_tendsto_L2
+    module: ChenDalang15/PicardStepStability.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-step-tendsto-l2
+    status: internal
+    note: 'Stability of the actual Picard map: bounded, jointly measurable inputs converging pointwise
+      in L² have outputs converging pointwise in L².'
+  - source: null
+    lean: ChenDalang15.Picard.eLpNorm_two_le_of_moment_bound
+    module: ChenDalang15/PicardSummability.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-elpnorm-two-le-of-moment-bound
+    status: internal
+    note: Taking the square root of a genuine moment bound controls the L² seminorm.
+  - source: null
+    lean: ChenDalang15.Picard.tsum_eLpNorm_two_lt_top_of_moment_bound
+    module: ChenDalang15/PicardSummability.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-tsum-elpnorm-two-lt-top-of-moment-bound
+    status: internal
+    note: A summable square-root coefficient envelope yields a finite sum of L² norms. This analytic helper
+      is independent of the specific Picard coefficient formula.
+  - source: null
+    lean: ChenDalang15.Picard.tsum_eLpNorm_two_lt_top_of_BCoeff
+    module: ChenDalang15/PicardSummability.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-tsum-elpnorm-two-lt-top-of-bcoeff
+    status: internal
+    note: The manuscript's `Bₙ(t)` difference estimate implies summable L² differences, including `b =
+      0`, `t = 0` and a zero finite profile constant.
+  - source: null
+    lean: ChenDalang15.Picard.memLp_two_of_BCoeff
+    module: ChenDalang15/PicardSummability.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-memlp-two-of-bcoeff
+    status: internal
+    note: Each difference belongs to L² under the same coefficient bound.
+  - source: null
+    lean: ChenDalang15.Picard.kernelVariance_le_lstConv_of_moment_le
+    module: ChenDalang15/PicardVariance.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-kernelvariance-le-lstconv-of-moment-le
+    status: internal
+    note: A measurable deterministic envelope for the second moments bounds the heat kernel variance.
+      Only positive-time values of the envelope and field are read.
+  - source: null
+    lean: ChenDalang15.Picard.kernelVariance_rho_le_remainder
+    module: ChenDalang15/PicardVariance.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-kernelvariance-rho-le-remainder
+    status: internal
+    note: Quadratic growth and the explicit Picard moment majorant bound the next heat kernel variance
+      by the resolvent contribution. Finiteness requires Gaussian tempering separately.
+  - source: null
+    lean: ChenDalang15.Picard.kernelVariance_rho_lt_top
+    module: ChenDalang15/PicardVariance.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/picard-kernelvariance-rho-lt-top
+    status: internal
+    note: The next heat kernel variance is finite under Gaussian tempering and the input moment bound,
+      including zero Lipschitz/growth coefficient. No solution, output bound or convergence is assumed.
+  - source: null
+    lean: ChenDalang15.S4CompactMajorant.majorant_le_envelope
+    module: ChenDalang15/S4CompactMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-majorant-le-envelope
+    status: internal
+    note: The genuine Gaussian-tempered integral bridge makes this a bound on the actual lower-integral
+      majorant, rather than a bound on a totalized integral.
+  - source: null
+    lean: ChenDalang15.S4CompactMajorant.continuousAt_J0
+    module: ChenDalang15/S4CompactMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-continuousat-j0
+    status: internal
+    note: Joint continuity of the actual deterministic heat flow at positive time, with the diffusivity
+      retained through the explicit time-scaling bridge.
+  - source: null
+    lean: ChenDalang15.S4CompactMajorant.continuousAt_envelope
+    module: ChenDalang15/S4CompactMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-continuousat-envelope
+    status: internal
+    note: The envelope is jointly continuous on the positive-time half-plane.
+  - source: null
+    lean: ChenDalang15.S4CompactMajorant.exists_bound_rect
+    module: ChenDalang15/S4CompactMajorant.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-exists-bound-rect
+    status: internal
+    note: Every positive-time compact rectangle has a finite uniform bound for `V² + majorant`. The coefficient,
+      offset and initial measure may vanish.
+  - source: null
+    lean: ChenDalang15.S4GaussianMargin.G_sq_le_future_of_far
+    module: ChenDalang15/S4GaussianMargin.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-g-sq-le-future-of-far
+    status: internal
+    note: Far-space Gaussian domination for nearby output points. The diffusivity is unchanged and the
+      dominating kernel has the fixed later output time `2*t`. All constants are derived from the displayed
+      hypotheses.
+  - source: null
+    lean: ChenDalang15.S4IntegralIncrements.enorm_sub_sq_eq
+    module: ChenDalang15/S4IntegralIncrements.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-enorm-sub-sq-eq
+    status: internal
+    note: The actual stochastic integral's output increment is the weighted causal kernel increment. No
+      continuity or increment identity is assumed.
+  - source: null
+    lean: ChenDalang15.S4IntegralIncrements.enorm_sub_sq_eq_prod
+    module: ChenDalang15/S4IntegralIncrements.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-enorm-sub-sq-eq-prod
+    status: internal
+    note: Product-measure form for a measurable second-moment weight. The substantive increment identity
+      above does not require this additional measurability input.
+  - source: null
+    lean: ChenDalang15.S4SolutionContinuity.measurable_coefficient_moment
+    module: ChenDalang15/S4SolutionContinuity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-measurable-coefficient-moment
+    status: internal
+    note: Predictability supplies joint measurability of the actual coefficient's second-moment weight.
+      No integrability or continuity is assumed here.
+  - source: null
+    lean: ChenDalang15.S4SolutionContinuity.exists_coefficient_bound_rect
+    module: ChenDalang15/S4SolutionContinuity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-exists-coefficient-bound-rect
+    status: internal
+    note: The actual field's majorant gives a finite compact bound for the coefficient moment. Zero growth
+      coefficient, offset and initial profile are retained.
+  - source: null
+    lean: ChenDalang15.S4SolutionContinuity.coefficient_weighted_variance_lt_top
+    module: ChenDalang15/S4SolutionContinuity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-coefficient-weighted-variance-lt-top
+    status: internal
+    note: Every output variance of the coefficient weight is finite by the actual majorant estimate. In
+      particular this supplies the later-output DCT envelope.
+  - source: null
+    lean: ChenDalang15.S4SolutionContinuity.continuousOn_integralField
+    module: ChenDalang15/S4SolutionContinuity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-continuouson-integralfield
+    status: internal
+    note: The existing Walsh integral field is L²-continuous at positive times. The measurable coefficient
+      weight, compact bound, future envelope and actual increment identity are derived; no weighted convergence
+      is a hypothesis.
+  - source: null
+    lean: ChenDalang15.S4SolutionContinuity.solution_of_solution₀
+    module: ChenDalang15/S4SolutionContinuity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-solution-of-solution-zero
+    status: internal
+    note: The S3 field becomes a full `D2:Solution` using its proved moment majorant to establish continuity
+      of its actual integral witness.
+  - source: null
+    lean: ChenDalang15.S4SolutionContinuity.exists_predictable_solution
+    module: ChenDalang15/S4SolutionContinuity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-exists-predictable-solution
+    status: internal
+    note: Full predictable random-field solution existence from the data only, including L²-continuity
+      of the integral and the proved moment majorant.
+  - source: null
+    lean: ChenDalang15.S4SolutionContinuity.exists_predictable_solution_of_separate_constants
+    module: ChenDalang15/S4SolutionContinuity.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-exists-predictable-solution-of-separate-constants
+    status: internal
+    note: Full solution existence also accepts separate coefficient growth and Lipschitz constants, using
+      their absolute-value maximum only in the majorant.
+  - source: null
+    lean: ChenDalang15.S4WeightedKernel.tendsto_weighted_sq_difference
+    module: ChenDalang15/S4WeightedKernel.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s4-tendsto-weighted-sq-difference
+    status: internal
+    note: Finite future variance and a finite bound on the displayed compact input rectangle imply joint
+      weighted kernel continuity at a positive output point. The weight may be infinite elsewhere; its
+      needed a.e. finiteness is derived.
+  - source: null
+    lean: ChenDalang15.S5GrowthConsequences.lowerGrowthIndex_ge_all_p_of_solution
+    module: ChenDalang15/S5GrowthConsequences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-lowergrowthindex-ge-all-p-of-solution
+    status: internal
+    note: 'For every existing full solution: Theorem 2.12(1), zero offset, for every full solution and
+      every real p≥2. The second-moment premise is discharged by the proved solution moment bound.'
+  - source: null
+    lean: ChenDalang15.S5GrowthConsequences.growthIndices_eq_top_all_p_of_solution
+    module: ChenDalang15/S5GrowthConsequences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-growthindices-eq-top-all-p-of-solution
+    status: internal
+    note: 'For every existing full solution: Theorem 2.12(1), nonzero offset: both indices are infinite
+      for every real p≥2. Zero initial measure is allowed.'
+  - source: null
+    lean: ChenDalang15.S5GrowthConsequences.quasilinear_growthIndices_eq_top_all_p_of_solution
+    module: ChenDalang15/S5GrowthConsequences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-quasilinear-growthindices-eq-top-all-p-of-solution
+    status: internal
+    note: 'For every existing full solution: Theorem 2.12(3), quasi-linear nonzero offset, all real p≥2.'
+  - source: null
+    lean: ChenDalang15.S5GrowthConsequences.quasilinear_growthIndices_eq_of_solution
+    module: ChenDalang15/S5GrowthConsequences.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-quasilinear-growthindices-eq-of-solution
+    status: internal
+    note: 'For every existing full solution: Theorem 2.12(3), zero offset, for general measurable coefficients
+      with ρ(z)²=λ²z², not restricted to a literal linear coefficient.'
+  - source: null
+    lean: ChenDalang15.S5Headlines.T2_ExUni_p2_headline
+    module: ChenDalang15/S5Headlines.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-headline-t2-exuni-p2-headline
+    status: internal
+    note: Full solution existence and uniqueness under literal Gaussian integrability and a globally Lipschitz
+      coefficient.
+  - source: null
+    lean: ChenDalang15.S5Headlines.T2_Growth_one_zero_headline
+    module: ChenDalang15/S5Headlines.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-headline-t2-growth-one-zero-headline
+    status: internal
+    note: Theorem 2.12(1), zero offset, with full existence and the lower bound for every real p ≥ 2.
+  - source: null
+    lean: ChenDalang15.S5Headlines.T2_Growth_one_top_headline
+    module: ChenDalang15/S5Headlines.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-headline-t2-growth-one-top-headline
+    status: internal
+    note: Theorem 2.12(1), nonzero offset, with full existence and both indices infinite for every real
+      p ≥ 2; zero initial measure is allowed.
+  - source: null
+    lean: ChenDalang15.S5Headlines.T2_Growth_two_headline
+    module: ChenDalang15/S5Headlines.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-headline-t2-growth-two-headline
+    status: internal
+    note: Theorem 2.12(2) at p = 2, with full existence and the exact strict-branch upper bound.
+  - source: null
+    lean: ChenDalang15.S5Headlines.T2_Growth_three_zero_headline
+    module: ChenDalang15/S5Headlines.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-headline-t2-growth-three-zero-headline
+    status: internal
+    note: Theorem 2.12(3) at p = 2, zero offset, for the general coefficient square identity, with full
+      existence.
+  - source: null
+    lean: ChenDalang15.S5Headlines.T2_Growth_three_top_headline
+    module: ChenDalang15/S5Headlines.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-headline-t2-growth-three-top-headline
+    status: internal
+    note: Theorem 2.12(3), nonzero offset, with full existence and both indices infinite for every real
+      p ≥ 2.
+  - source: null
+    lean: ChenDalang15.S5Headlines.P2_Ex_Exp_headline
+    module: ChenDalang15/S5Headlines.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-headline-p2-ex-exp-headline
+    status: internal
+    note: Proposition 2.14 at p = 2 for the literal exponential initial density, with full existence and
+      the exact non-strict branch.
+  - source: null
+    lean: ChenDalang15.S5Headlines.exists_dirac_pam
+    module: ChenDalang15/S5Headlines.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-headline-exists-dirac-pam
+    status: internal
+    note: A nonzero Dirac initial measure and identity coefficient instantiate the headline on an actual
+      augmented white-noise space, with both p=2 indices 1/2.
+  - source: null
+    lean: ChenDalang2015.T2_ExUni_p2_headline
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-t2-exuni-p2-headline
+    status: reusable
+    note: Full solution existence and uniqueness under literal Gaussian integrability and a globally Lipschitz
+      coefficient.
+  - source: null
+    lean: ChenDalang2015.T2_Growth_one_zero_headline
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-t2-growth-one-zero-headline
+    status: reusable
+    note: Theorem 2.12(1), zero offset, with full existence and the lower bound for every real p ≥ 2.
+  - source: null
+    lean: ChenDalang2015.T2_Growth_one_top_headline
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-t2-growth-one-top-headline
+    status: reusable
+    note: Theorem 2.12(1), nonzero offset, with full existence and both indices infinite for every real
+      p ≥ 2; zero initial measure is allowed.
+  - source: null
+    lean: ChenDalang2015.T2_Growth_two_headline
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-t2-growth-two-headline
+    status: reusable
+    note: Theorem 2.12(2) at p = 2, with full existence and the exact strict-branch upper bound.
+  - source: null
+    lean: ChenDalang2015.T2_Growth_three_zero_headline
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-t2-growth-three-zero-headline
+    status: reusable
+    note: Theorem 2.12(3) at p = 2, zero offset, for the general coefficient square identity, with full
+      existence.
+  - source: null
+    lean: ChenDalang2015.T2_Growth_three_top_headline
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-t2-growth-three-top-headline
+    status: reusable
+    note: Theorem 2.12(3), nonzero offset, with full existence and both indices infinite for every real
+      p ≥ 2.
+  - source: null
+    lean: ChenDalang2015.P2_Ex_Exp_headline
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-p2-ex-exp-headline
+    status: reusable
+    note: Proposition 2.14 at p = 2 for the literal exponential initial density, with full existence and
+      the exact non-strict branch.
+  - source: null
+    lean: ChenDalang15.HeatCausalKernel.heatK_eq_upstream
+    module: ChenDalang15/HeatCausalKernel.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/heat-kernel-causal-upstream-bridge
+    status: internal
+    note: Exact causal-kernel identity with the upstream variance-scaled heat kernel, retaining every
+      real diffusivity parameter; a normalization bridge, not a new analytic result.
+  - source: null
+    lean: ChenDalang15.HeatCausalKernel.timeSpaceVolume_eq_upstream
+    module: ChenDalang15/HeatCausalKernel.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/positive-time-measure-upstream-bridge
+    status: internal
+    note: The Walsh and deterministic upstream positive-time space product measures are definitionally
+      equal.
+  - source: null
+    lean: ChenDalang15.S5MomentHeadline.T2_ExUni_secondMoment_headline
+    module: ChenDalang15/S5MomentHeadline.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/s5-headline-second-moment
+    status: internal
+    note: Full solution existence and exact quasilinear second moments for every solution at positive
+      times, with general diffusivity, nonnegative Gaussian-tempered data and a Lipschitz coefficient
+      satisfying the stated square identity.
+  - source: null
+    lean: ChenDalang2015.T2_ExUni_secondMoment_headline
+    module: Solution.lean
+    kind: theorem
+    claim: chen-dalang-15-moments-lean/palomar-second-moment-headline
+    status: reusable
+    note: Full solution existence and exact quasilinear second moments for every solution at positive
+      times, with general diffusivity, nonnegative Gaussian-tempered data and a Lipschitz coefficient
+      satisfying the stated square identity.
+acknowledgements: 'Developed and verified with lean-pkg (https://github.com/lean-pkg/lean-pkg; doi:10.5281/zenodo.23272098),
   using Lean, Mathlib, RoughHeatKernel and WalshIntegral.
+
+  Formalizes results of arXiv:1307.0600v3.'
