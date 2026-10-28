@@ -1,0 +1,42 @@
+{
+  "not_a_receipt": true,
+  "source_commit": "3422d034c99dd0dba99f1396cbb8b5df9bf8f75a",
+  "verify_sha256": "4040bc4ed4367f20736c45ad39498a4d20eb05c161716bfef3e72148bafe080c",
+  "probe_sha256": "cf05deaee19c48b4397c26a263d772d5b3106a63183543fdb826b5951649223f",
+  "passed": true,
+  "controls": {
+    "Good": {
+      "compiled_exit": 0,
+      "audit_exit": 0,
+      "summary": {
+        "checked": 1,
+        "nonstandard": [],
+        "missing": []
+      },
+      "policy_problems": [],
+      "fixture_sha256": "ddf33737bbd5bfefa33092403a064c73d7d9476bb37a3c453ff065a6d95b6700",
+      "log_sha256": "07552619ae8d4103f7b1624aab1cffb24fd29c53aee78812250dccd71db4f759"
+    },
+    "Bad": {
+      "compiled_exit": 0,
+      "audit_exit": 0,
+      "summary": {
+        "checked": 1,
+        "nonstandard": [
+          {
+            "decl": "GuardBad.bad",
+            "axioms": [
+              "GuardBad.forbidden"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "policy_problems": [
+        "claim_axioms: claim(s) use axioms outside the allowed set ['Classical.choice', 'Quot.sound', 'propext']: GuardBad.bad (GuardBad.forbidden)"
+      ],
+      "fixture_sha256": "6d4895bef0947e4e6828f9a285be51bb57591a76e20e7761ec1780a954b2a829",
+      "log_sha256": "54042fa5db1056a72a924f0cdc7f94bfa6522a5b6a9cd96fceafa876be27ad32"
+    }
+  }
+}

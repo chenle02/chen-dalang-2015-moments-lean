@@ -64,3 +64,19 @@ The checks certify the exact Lean statements at their recorded source and
 dependency revisions. They do not prove novelty, certify every result of the
 paper, turn L2 continuity into sample-path continuity, or replace the author's
 responsibility for the statement-to-paper correspondence.
+
+
+## Audit escape control
+
+The exact Core-Lean audit executable extracted from the committed verify.sh
+was exercised on two separately compiled fixtures. A theorem of True proved
+by True.intro was accepted. A theorem of True proved by a named custom axiom
+was detected as depending on GuardBad.forbidden and rejected by the installed
+axiom policy. Both fixture compilations and both environment probes exited
+successfully; rejection occurred at the intended forbidden-axiom policy, not
+an import or syntax failure.
+
+The separate positive and negative logs and documentary result are retained
+under .lean-receipts/controls/. That result is explicitly not a source-bound
+receipt and is not mixed into the accepted 216-claim audit transcript. It tests
+the audit executable, not another mathematical result of the paper.
