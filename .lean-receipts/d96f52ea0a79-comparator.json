@@ -1,0 +1,122 @@
+{
+  "build_provenance": {
+    "cache_reused": 1,
+    "compiled": true,
+    "modules_built": 53,
+    "prebuilt": false,
+    "source": null
+  },
+  "commit": "d96f52ea0a7932aef31b626d5756727e885814f3",
+  "configs": [
+    {
+      "challenge_module": "CD2015Challenge",
+      "definition_names": [],
+      "log": ".lean-receipts/d96f52ea0a79-comparator-comparator_config-chen-dalang-2015.log",
+      "log_sha256": "2b2677c1c4fa701bb8c768fb98d8feef7132fbfedc1e4d989209342cd45b3c46",
+      "path": "comparator/config-chen-dalang-2015.json",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "result": "pass",
+      "sha256": "c3e1afe52f6e3ed9da391a560951a6eb2e3d6e2bb7aff8cf83bb59c1b806010f",
+      "solution_module": "CD2015Solution",
+      "theorem_names": [
+        "ChenDalang2015.P2K_L_closed_form",
+        "ChenDalang2015.P2K_hasSum",
+        "ChenDalang2015.P2K_K_closed_form",
+        "ChenDalang2015.P2K_resolvent",
+        "ChenDalang2015.P2K_summable",
+        "ChenDalang2015.E2H_closed_form",
+        "ChenDalang2015.LA_Phi_E",
+        "ChenDalang2015.LA_Phi_E_false_at_neg_one",
+        "ChenDalang2015.T2_ExUni_p2_headline",
+        "ChenDalang2015.T2_Growth_one_zero_headline",
+        "ChenDalang2015.T2_Growth_one_top_headline",
+        "ChenDalang2015.T2_Growth_two_headline",
+        "ChenDalang2015.T2_Growth_three_zero_headline",
+        "ChenDalang2015.T2_Growth_three_top_headline",
+        "ChenDalang2015.P2_Ex_Exp_headline",
+        "ChenDalang2015.T2_ExUni_secondMoment_headline"
+      ]
+    }
+  ],
+  "generated_at": "2026-10-28T20:09:57+00:00",
+  "host": "h-f985343177f7",
+  "host_label": "h-f985343177f7",
+  "host_policy": "host h-f985343177f7 listed in COMPARATOR_RECEIPT_ALLOWED_HOSTS",
+  "job_id": "local-h-f985343177f7-3039477-20261028T200957Z",
+  "judges": 1,
+  "lean_threads": 1,
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mechanism": "toolchain",
+  "olean_manifest": {
+    "captured": "build",
+    "files": 159,
+    "lake_manifest_sha256": "23e6801b35b58d7e81615c53fc998b80ca4e2c6ba67268ef885458661338b237",
+    "lean_toolchain": "leanprover/lean4:v4.35.0",
+    "schema": "olean-manifest/1",
+    "sha256": "9322d36cd46fa252ec9741655be6695710e526d3d5af467f9ca8c492c4aaef68"
+  },
+  "producer": {
+    "bytecode_files": 80,
+    "bytecode_sha256": "4eca99f57c2af9a563ca06205e71579483afd2ae860602ccea31e6bbb1df7b31",
+    "bytecode_tag": "cpython-312",
+    "commit": null,
+    "dirty": null,
+    "install": "installed",
+    "lean_pkg": "0.22.0",
+    "other_bytecode_files": 0,
+    "python": "3.12.3",
+    "source_files": 95,
+    "sources_sha256": "2f46280da99e779e284b3ab3c6d77634b8f828a694146fbb0afb0c8e518a5580"
+  },
+  "result": "pass",
+  "schema": "comparator-receipt/2",
+  "stack_limit": {
+    "hard_kb": "unlimited",
+    "soft_kb": "unlimited",
+    "source": "COMPARATOR_RECEIPT_STACK"
+  },
+  "stages": [
+    {
+      "exit": 0,
+      "stage": "checkout",
+      "status": "prepared",
+      "wall_s": 18.253
+    },
+    {
+      "exit": 0,
+      "stage": "cache-get",
+      "status": "prepared",
+      "wall_s": 4.806
+    },
+    {
+      "exit": 0,
+      "stage": "build",
+      "status": "prepared",
+      "wall_s": 261.67
+    },
+    {
+      "exit": 0,
+      "stage": "comparator",
+      "status": "ok",
+      "wall_s": 235.278
+    }
+  ],
+  "toolchain_resolution": {
+    "lake": "<elan>/bin/lake",
+    "source": "elan",
+    "version": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)"
+  },
+  "tools": {
+    "con-ron_sha256": "60f4ca9fb9436c323789fa49aae33af6dcd1b9b54b43a66b461779ce79fd8eec",
+    "lake_sha256": "8ba83c98f76562d03b8dbc33f1057151ba6cbb121679dde76b2260ccc90495e1",
+    "lean_toolchain": "leanprover/lean4:v4.35.0",
+    "leanchecker_sha256": "12c38901cdbfab178f1bf6145dd30012e9a3b2c11ca695292a5884fa3cbaddb6",
+    "leanexport_sha256": "f6a6483d518a11b323c28b9bac176d2220df0e9fc3230833815db9586669c074",
+    "nanoda_bin_sha256": "cbf13950fc4a48f635a0beceeb5ed32dd82568b870cfd081b6391c1f2cf02ba5"
+  },
+  "unit_size": null
+}
