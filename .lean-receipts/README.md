@@ -1,0 +1,13 @@
+# Receipts
+
+## `3422d03`: lower-tier receipt, systemd unit chen-dalang-public-native-20261028.service
+
+- Receipt: `3422d03-public-native.json`. systemd --user unit `chen-dalang-public-native-20261028.service`, invocation `a158e650556f4beabbe4c8f73edd8d62` on `h-2db2e0fa6029`:
+  Result success, exit `0`; runtime 00:08:42.64, CPU 00:09:48.87, memory peak 2.4 GiB; caps MemoryMax 12.0 GiB, MemorySwapMax 0 B, CPUQuota 200%, RuntimeMax 45min.
+- Producer: lean-pkg 0.22.0 (installed), sources SHA-256 `2f46280da99e779e284b3ab3c6d77634b8f828a694146fbb0afb0c8e518a5580`, own bytecode (cpython-312, 80 file(s)) SHA-256 `f3fbc5a78d593ab338ca400d0f84ab4fd955d1c5f3fafc7e7e93a68e0f09d595`; sources unchanged from run start to collection.
+- Checker: verify.sh (lake build Solution ChenDalang15.Axioms; #print axioms); sorry_count 0; axioms Classical.choice, Quot.sound, propext.
+- Log: `3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029-verify.redacted.log`, SHA-256 `d4d0352b7013acc6709a62b8de7d5a5f3357def071bdd06f683dd8c8ee8c92ff` (= `report_sha256`);
+  raw log SHA-256 `d4d0352b7013acc6709a62b8de7d5a5f3357def071bdd06f683dd8c8ee8c92ff` (0 line(s) differ: local paths redacted).
+- Unit properties: `3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029-unit.properties`, SHA-256 `84281743909a0fc016b9dede668f47bde8d9a8a81bcbee72e3f09b15fa546c7a` (captured before the unit was collected).
+- Stored compressed: `3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029-verify.redacted.log.gz` (deterministic gzip, SHA-256 `eea41a8876a3df64f3b966d4d00c9fe9c69646c620d6c78248e50da964d5ec5b` = `report_compressed.sha256`; 51911 bytes uncompressed). Restore: `gzip -dc 3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029-verify.redacted.log.gz > 3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029-verify.redacted.log`, then `sha256sum 3422d034c99d-systemd-user-chen-dalang-public-native-20261028.service-a158e650556f4beabbe4c8f73edd8d62-h-2db2e0fa6029-verify.redacted.log` prints `report_sha256`.
+- Seal: job stdout SHA-256 `b85918a174489e6338a4af3616b34dc12c9799841d2937e6b25fa5a77379fac1` carries verify-log-sha256 = raw log SHA-256 `d4d0352b7013acc6709a62b8de7d5a5f3357def071bdd06f683dd8c8ee8c92ff`; lake-manifest.json SHA-256 `23e6801b35b58d7e81615c53fc998b80ca4e2c6ba67268ef885458661338b237` (pre = post).
