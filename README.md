@@ -44,7 +44,7 @@ Lean v4.35.0 and Mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679 are pinned.
 RoughHeatKernel and WalshIntegral are public Git dependencies at exact commits
 in lake-manifest.json. No private dependency is needed to rebuild this source.
 
-See [verification instructions](docs/verification.md) for cache setup, a manual
+See [reproduction instructions](docs/reproduce.md) for cache setup, a manual
 check, the receipt-backed lean-pkg route, expected terminal markers and limits.
 The Palomar Comparator configuration is comparator/config-chen-dalang-2015.json.
 
