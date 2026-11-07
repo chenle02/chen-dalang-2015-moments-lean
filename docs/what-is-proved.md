@@ -27,7 +27,7 @@ The iterated space-time convolution kernels have the explicit heat-kernel/Gamma 
 
 `ChenDalang2015.P2K_L_closed_form`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem P2K_L_closed_form {ν lam : ℝ} (hν : 0 < ν) (n : ℕ) {t : ℝ} (ht : 0 < t) (x : ℝ) :
@@ -46,7 +46,7 @@ The iterated kernels sum to the stated resolvent; this is actual series converge
 
 `ChenDalang2015.P2K_hasSum`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem P2K_hasSum {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 < t) (x : ℝ) :
@@ -64,7 +64,7 @@ The resolvent has the displayed closed formula in Gaussian and normal-distributi
 
 `ChenDalang2015.P2K_K_closed_form`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem P2K_K_closed_form {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 < t) (x : ℝ) :
@@ -82,7 +82,7 @@ The resolvent satisfies its convolution identity with the base squared heat kern
 
 `ChenDalang2015.P2K_resolvent`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem P2K_resolvent {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 < t) (x : ℝ) :
@@ -97,7 +97,7 @@ The stated powers of the scalar Picard coefficients are summable, including the 
 
 `ChenDalang2015.P2K_summable`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem P2K_summable {ν lam t : ℝ} (hν : 0 < ν) (ht : 0 ≤ t) {m : ℕ} (hm : 0 < m) :
@@ -114,7 +114,7 @@ The convolution of the constant function with the resolvent has the stated time-
 
 `ChenDalang2015.E2H_closed_form`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem E2H_closed_form {ν lam : ℝ} (hν : 0 < ν) {t : ℝ} (ht : 0 ≤ t) (x : ℝ) :
@@ -130,7 +130,7 @@ The integral/normal-distribution identity is proved for positive b, the regime n
 
 `ChenDalang2015.LA_Phi_E`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem LA_Phi_E {b t : ℝ} (hb : 0 < b) (ht : 0 ≤ t) :
@@ -148,7 +148,7 @@ A separate finite positive-time statement refutes the printed negative-parameter
 
 `ChenDalang2015.LA_Phi_E_false_at_neg_one`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem LA_Phi_E_false_at_neg_one :
@@ -167,7 +167,7 @@ For the stated nonnegative Gaussian-tempered initial measure, positive diffusivi
 
 `ChenDalang2015.T2_ExUni_p2_headline`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem T2_ExUni_p2_headline [IsProbabilityMeasure P]
@@ -192,7 +192,7 @@ Full solution existence is supplied and the lower-growth bound holds for every f
 
 `ChenDalang2015.T2_Growth_one_zero_headline`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem T2_Growth_one_zero_headline [IsProbabilityMeasure P]
@@ -217,7 +217,7 @@ Under the stated nonzero-offset lower bound, full solutions exist and both indic
 
 `ChenDalang2015.T2_Growth_one_top_headline`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem T2_Growth_one_top_headline [IsProbabilityMeasure P]
@@ -243,7 +243,7 @@ At p = 2, nonnegative data satisfying the literal exponential-moment hypothesis 
 
 `ChenDalang2015.T2_Growth_two_headline`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem T2_Growth_two_headline [IsProbabilityMeasure P]
@@ -269,7 +269,7 @@ At p = 2 the stated general coefficient-square identity and exponential data con
 
 `ChenDalang2015.T2_Growth_three_zero_headline`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem T2_Growth_three_zero_headline [IsProbabilityMeasure P]
@@ -295,7 +295,7 @@ The applicable nonzero-offset square-identity regime gives the stated infinite-i
 
 `ChenDalang2015.T2_Growth_three_top_headline`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem T2_Growth_three_top_headline [IsProbabilityMeasure P]
@@ -321,7 +321,7 @@ For literal exponential initial density, nonzero coefficient and positive decay 
 
 `ChenDalang2015.P2_Ex_Exp_headline`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem P2_Ex_Exp_headline [IsProbabilityMeasure P]
@@ -350,7 +350,7 @@ For a globally Lipschitz coefficient satisfying the general square identity, an 
 
 `ChenDalang2015.T2_ExUni_secondMoment_headline`
 
-<details><summary>Exact Lean statement</summary>
+<details markdown="1"><summary>Exact Lean statement</summary>
 
 ```lean
 theorem T2_ExUni_secondMoment_headline [IsProbabilityMeasure P]
